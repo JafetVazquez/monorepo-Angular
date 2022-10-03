@@ -126,7 +126,8 @@
               "projects/prueba2/src/assets"
             ],
             "styles": [
-              "projects/prueba2/src/styles.css"
+              "projects/prueba2/src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -193,7 +194,8 @@
               "projects/prueba2/src/assets"
             ],
             "styles": [
-              "projects/prueba2/src/styles.css"
+              "projects/prueba2/src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           }

@@ -1,242 +1,83 @@
 elemento{
     --primary: #017999;
-    --secundary: #6EB8CC;
+    --secondary: #6EB8CC;
 
 }
 
-body {
-    font-family: 'Overpass', sans-serif;
-    font-weight: normal;
-    font-size: 100%;
-    color: black;
-    align-items: center;
-    
-    margin: 0;
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-form{
+    padding: 25px;
+}
+
+h3{
+    padding-left:30px;
+    padding-right: 20px;
+    font-weight: 700;
+}
+
+label{
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.bg-color{
+    background-color:rgb(245, 248, 250);
+}
+
+.bg-color:hover label{
+    color:var(--secondary);
+}
+
+.btn-custom{
     background-color: var(--primary);
-    
-}
-
-#nombre{
-    font-family: 'Overpass', sans-serif;
-    font-weight: 800%;
-    font-size: 300%;
-    color: black;
-    
-}
-/* efectos para el contenedor de pantalla completa */
-#contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    margin: 0;
-    padding: 0;
-    min-width: auto;
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--primary);
-    background-position: center;
-    background-size: cover;
-}
-
-/* contenedor del login a la izquierda */
-#contenedorcentrado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:row;
-    
-    
-    min-width: 380px;
-    max-width: 900px;
-    width: 90%;
-    
-    background-color:var(--primary);
-    
-    /*opacity: 0.50;
-    filter: alpha(opacity=50);*/
-    
-    
-    
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-/* formulario de login */
-/* formulario de login */
-#login {
-    width: 100%;
-    max-width: 320px;
-    min-width: 320px;
-    padding: 30px 30px 50px 30px;
-    background-color: #6EB8CC;
-    
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    
-    box-sizing: border-box;
-    
-    opacity: 1;
-    filter: alpha(opacity=1);
-    
-}
-
-#login label {
-    display: block;
-    font-family: 'Overpass', sans-serif;
-    font-size: 120%;
-    color:#3c4245;
-    
-    margin-top: 15px;
-}
-
-#login input {
-    font-family: 'Overpass', sans-serif;
-    font-size: 110%;
-    color: #1b262c;
-    
-    display: block;
-    width: 100%;
-    height: 40px;
-    
-    margin-bottom: 10px;
-    padding: 5px 5px 5px 10px;
-    
-    box-sizing: border-box;
-    
     border: none;
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #fff;
+    font-weight:700;
+    height: 48px;
 }
 
-#login input::placeholder {
-    font-family: 'Overpass', sans-serif;
-    color: black;
+.btn-custom{
+    color: var(--primary);
+    background-color: var(--secondary);
 }
 
-#login button {
-    font-family: 'Overpass', sans-serif;
-    font-size: 110%;
-    color:black;
-    width: 100%;
-    height: 40px;
-    border: none;
-    
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    
-    background-color: #dfcdc3;
-    
-    margin-top: 10px;
+.form-control{
+    border:0px;
+    background-color: rgb(245, 248, 250);
+    border-bottom: 2px solid #657786;
+    padding: 0px 4px 0px 4px;
+    min-height: 20px;
 }
 
-#login button:hover {
-    background-color: #3c4245;
-    color:#dfcdc3;
-}
-/* formulario de login */
-/* formulario de login */
-
-/* seccion de la derecha */
-/* seccion de la derecha */
-/* por defecto */
-#derecho {
-    /*display: flex;
-    align-items:center;
-    justify-content:center;*/
-    
-    text-align: center;
-    width: 100%;
-    
-    opacity: 0.70;
-    filter: alpha(opacity=70);
-    
-    padding:20px 20px 20px 50px;
-    box-sizing: border-box;
+.form-control:focus{
+    box-shadow: none;
+    background-color: rgb(245, 248, 250);
+    border-color: var(--primary);
 }
 
-.titulo {
-    text-align: center;
-    font-size: 300%;
-    color: black;
-}
-
-.logo-empresa img {
-    width: 60%;
-}
-
-hr {
-    border-top: 1px solid #8c8b8b;
-	border-bottom: 1px solid #dfcdc3;
-    
-}
-.pie-form {
-    font-size: 90%;
-    text-align: center;    
-    margin-top: 15px;
-}
-
-.pie-form a {
+.fa{
+    color: var(--primary);
+    margin: 0 auto;
     display: block;
+    text-align: center;
+    font-size: 50px;
+}
+
+a{
     text-decoration: none;
-    color: #dfcdc3;
-    margin-bottom: 3px;
+    color: rgb(27, 149, 224);
+    cursor: pointer;
 }
 
-.pie-form a:hover {
-    color: #719192;
+a:hover{
+    text-decoration: underline;
+    color: rgb(27, 149, 224);
+    cursor: pointer;
 }
-/* seccion de la derecha */
-/* seccion de la derecha */
 
-/* ajustar a pantallas con ancho menor o igual a 775px; */
-/* ajustar a pantallas con ancho menor o igual a 775px; */
-@media all and (max-width: 775px)
-{
-    #contenedorcentrado {
-        flex-direction:column-reverse;
-
-        min-width: 380px;
-        max-width: 900px;
-        width: 90%;
-
-        background-color: #5f6769;
-
-        /*opacity: 0.50;
-        filter: alpha(opacity=50);*/
-
-        border-radius: 10px 10px 10px 10px;
-        -moz-border-radius: 10px 10px 10px 10px;
-        -webkit-border-radius: 10px 10px 10px 10px;
-
-        -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-        -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-        box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-
-        padding: 30px;
-        box-sizing: border-box;
-    }
-    
-    #login {
-        margin: 0 auto;
-    }
-    
-    #derecho {
-        padding:20px 20px 20px 20px;
-    }
-    
-    #login label {
-        text-align: left;
-    }
-}
-/* ajustar a pantallas con ancho menor o igual a 775px; */
-/* ajustar a pantallas con ancho menor o igual a 775px; */
