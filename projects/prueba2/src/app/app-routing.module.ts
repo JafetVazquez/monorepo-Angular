@@ -3,6 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./componentes/login/login.component";
 import { User1Component } from "./users/user1/user1.component";
 
+
+
 const routes: Routes = [
     {
         path: '',
