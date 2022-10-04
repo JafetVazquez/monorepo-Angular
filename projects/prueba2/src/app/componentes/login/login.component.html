@@ -42,13 +42,13 @@
             <form class="login-form" action="#">
               <div class="mb-3 bg-color">
                 <label>Usuario</label>
-                <input type="email" class="form-control" required>
+                <input type="email" [ngModel]="email" name="email" class="form-control" required>
               </div>
               <div class="mb-3 bg-color">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" required>
+                <input type="password" [ngModel]="password" name="password" class="form-control" required>
               </div>
-              <button type="button" class="btn btn-custom btn-dark btn-block mt-3 d-grid gap-2 mx-auto">Iniciar sesión</button>
+              <button type="submit" class="btn btn-custom btn-dark btn-block mt-3 d-grid gap-2 mx-auto" (click)="login()">Iniciar sesión</button>
               <div class="text-center pt-3 pb-3">
                 <a routerLink="/recuperar_contrasena" class="a">Recuperar contraseña</a> .    
                 <a routerLink="/" class="a">Crear cuenta</a>

@@ -7,12 +7,14 @@ import { RecuperarContrasenaComponent } from "./componentes/recuperar-contrasena
 const routes: Routes = [
     {
         path: '',
-        component: LoginComponent
+        component: LoginComponent,
+        pathMatch: 'full'
     },
 
     {
         path: 'recuperar_contrasena',
-        component: RecuperarContrasenaComponent
+        component: RecuperarContrasenaComponent,
+        pathMatch: 'full'
     }
 ];
 
