@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User1Component } from "../../users/user1/user1.component";
+import { Router } from '@angular/router';
+import { UsersService } from "../../users/users.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -8,24 +10,33 @@ import { User1Component } from "../../users/user1/user1.component";
 })
 export class LoginComponent {
 
-  email: string | undefined;
-  password: string | undefined;
+  email: any;
+  password: any;
   UserService: any;
   
-  constructor() { }
+  constructor(public userService: UsersService, public router: Router) { }
 
   login(){
-    console.log(this.email);
-    console.log(this.password);
-
     const user = {
       email: this.email,
       password: this.password
-    }
+    };
+
+    this.userService.login(user).subscribe( 
+      data => {
+      //console.log(data);
+      
+      this.userService.setToken(data.token);
+      this.router.navigateByUrl('/');
+    },
     
-    this.UserService.login(user).subscribe( (data: any) => {
-      console.log(data);
-    } )
+    // error => {
+    //   console.log(error);
+      
+    // }
+
+    );
+
   }
 
 }
