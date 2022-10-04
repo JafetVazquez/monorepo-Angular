@@ -17,7 +17,7 @@ const routes: Routes = [
 
     {
         path: 'recuperar-contrasena',
-        component: User1Component
+        component: RecuperarContrasenaComponent
     }, 
     {
         path: 'registrar',
