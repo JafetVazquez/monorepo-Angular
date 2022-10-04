@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User1Component } from "../../users/user1/user1.component";
 
 @Component({
   selector: 'app-registrar',
