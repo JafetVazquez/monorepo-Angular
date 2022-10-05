@@ -22,12 +22,11 @@ export class LoginComponent {
       password: this.password
     };
 
-    this.userService.login(user).subscribe( 
-      data => {
-      //console.log(data);
+    this.userService.login(user).subscribe( data => {
+      console.log(data);
       
       this.userService.setToken(data.token);
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl("/");
     },
     
     // error => {
