@@ -22,7 +22,12 @@ const routes: Routes = [
     {
         path: 'registrar',
         component: RegistrarComponent
+    },
+    {
+        path:'login',
+        component: LoginComponent
     }
+
 ];
 
 @NgModule({
