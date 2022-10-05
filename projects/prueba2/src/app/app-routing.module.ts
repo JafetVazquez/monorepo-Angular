@@ -17,7 +17,8 @@ const routes: Routes = [
 
     {
         path: 'recuperar-contrasena',
-        component: RecuperarContrasenaComponent
+        component: RecuperarContrasenaComponent,
+        pathMatch: 'full'
     }, 
     {
         path: 'registrar',
