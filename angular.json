@@ -214,6 +214,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@sweetalert2/ngx-sweetalert2"
+            ],
             "outputPath": "dist/login",
             "index": "projects/login/src/index.html",
             "main": "projects/login/src/main.ts",
