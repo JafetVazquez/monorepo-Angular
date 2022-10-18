@@ -28,26 +28,16 @@ body {
    width: 768px;
 }
 
-.comments-container h1 {
-   font-size: 36px;
-   color: #283035;
-   font-weight: 400;
-}
-
-.comments-container h1 a {
-   font-size: 18px;
-   font-weight: 700;
-}
-
 .comments-list {
    margin-top: 30px;
    position: relative;
+   border-radius: 5px;
 }
 
 /**
 * Lineas / Detalles
 -----------------------*/
-.comments-list:before {
+/* .comments-list:before {
    content: '';
    width: 2px;
    height: 100%;
@@ -80,7 +70,7 @@ body {
    position: absolute;
    top: 25px;
    left: -55px;
-}
+} */
 
 
 .comments-list li {
@@ -114,7 +104,7 @@ body {
    border: 3px solid #FFF;
    -webkit-border-radius: 4px;
    -moz-border-radius: 4px;
-   border-radius: 4px;
+   border-radius: 5px;
    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
@@ -126,18 +116,14 @@ body {
    height: 100%;
 }
 
-.reply-list .comment-avatar {
-   width: 50px;
-   height: 50px;
-}
 
-.comment-main-level:after {
+/* .comment-main-level:after {
    content: '';
    width: 0;
    height: 0;
    display: block;
    clear: both;
-}
+} */
 /**
 * Caja del Comentario
 ---------------------------*/
@@ -148,6 +134,7 @@ body {
    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+   border-radius: 10px;
 }
 
 .comments-list .comment-box:before, .comments-list .comment-box:after {
@@ -245,7 +232,7 @@ body {
 /** =====================
 * Responsive
 ========================*/
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 576px) {
    .comments-container {
        width: 480px;
    }
@@ -270,4 +257,12 @@ body {
     overflow:auto;
     box-sizing: border-box;
     padding:0 1rem;
+}
+
+textarea{
+   border:0px;
+   background-color: rgb(245, 248, 250);
+   border-bottom: 2px solid #657786;
+   padding: 0px 4px 0px 4px;
+   min-height: 20px;
 }

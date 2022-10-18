@@ -1,9 +1,11 @@
 <!-- Contenedor Principal -->
 <div class="cont">
+
     <br>
     <button type="button" style="border: none;" routerLink="/registrar/ticket"><img src="../../../assets/reject.png" height ="40"  style="border: none;"/></button>
     <div class="comments-container">
-        <h1>comentarios</h1>
+        <h1>COMENTARIOS<h6>ticket: 
+            CO90922A1</h6></h1>
 
         <ul id="comments-list" class="comments-list">
             <li *ngFor="let comment of comments">
@@ -13,7 +15,7 @@
                     <!-- Contenedor del Comentario -->
                     <div class="comment-box">
                         <div class="comment-head">
-                            <h6 class="comment-name "><a href="http://creaticode.com/blog">{{comment.email}}</a></h6>
+                            <h6 class="comment-name "><a (click)="perfil()" style="cursor: pointer;">{{comment.email}}</a></h6>
                             
                             <span>hace 20 minutos</span>
                             <i class="fa fa-reply"></i>
@@ -24,8 +26,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- Respuestas de los comentarios -->
             </li>
         </ul>
+        <div class="col-12">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
     </div>
+    
 </div>

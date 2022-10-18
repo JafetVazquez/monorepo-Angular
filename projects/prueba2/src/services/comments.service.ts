@@ -17,7 +17,7 @@ export class CommentsService {
     return this.getQuery('posts')
   }
 
-  Comentarios(id = 4){
+  Comentarios(id = 6){
     return this.getQuery(`posts/${id}/comments`)
   }
 }
