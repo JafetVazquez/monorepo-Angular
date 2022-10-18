@@ -10,6 +10,7 @@ import { RecuperarContrasenaComponent } from './componentes/recuperar-contrasena
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { TicketComponent } from './componentes/ticket/ticket.component';
+import { CommentsComponent } from './componentes/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TicketComponent } from './componentes/ticket/ticket.component';
     RecuperarContrasenaComponent,
     LoginComponent,
     RegistrarComponent,
-    TicketComponent
+    TicketComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

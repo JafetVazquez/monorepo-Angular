@@ -5,6 +5,8 @@ import { RegistrarComponent } from "./componentes/registrar/registrar.component"
 import { User1Component } from "./users/user1/user1.component";
 import { RecuperarContrasenaComponent } from "./componentes/recuperar-contrasena/recuperar-contrasena.component";
 import { TicketComponent } from "./componentes/ticket/ticket.component";
+import { CommentsComponent } from "./componentes/comments/comments.component";
+
 
 
 
@@ -32,12 +34,16 @@ const routes: Routes = [
     {
         path:'registrar/ticket',
         component: TicketComponent
+    },
+    {
+        path:'registrar/ticket/comments',
+        component: CommentsComponent
     }
 
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
     exports: [RouterModule]
 })
 export class AppRoutingModule{}

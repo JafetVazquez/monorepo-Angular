@@ -1,0 +1,31 @@
+<!-- Contenedor Principal -->
+<div class="cont">
+    <br>
+    <button type="button" style="border: none;" routerLink="/registrar/ticket"><img src="../../../assets/reject.png" height ="40"  style="border: none;"/></button>
+    <div class="comments-container">
+        <h1>comentarios</h1>
+
+        <ul id="comments-list" class="comments-list">
+            <li *ngFor="let comment of comments">
+                <div class="comment-main-level">
+                    <!-- Avatar -->
+                    <div class="comment-avatar"><img src="https://pic.onlinewebfonts.com/svg/img_184513.png" alt=""></div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name "><a href="http://creaticode.com/blog">{{comment.email}}</a></h6>
+                            
+                            <span>hace 20 minutos</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                            {{comment.body}}
+                        </div>
+                    </div>
+                </div>
+                <!-- Respuestas de los comentarios -->
+            </li>
+        </ul>
+    </div>
+</div>
