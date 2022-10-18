@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+        
+  <title>Login</title>    
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+  
+  <!-- Link hacia el archivo de estilos css -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+ 
+  
+  <style type="text/css">
+      
+  </style>
+  
+  <script type="text/javascript">
+  
+  </script>
+</head>
+  
+<body>
+
+    <h3 class="text-center pt-3">TICKETS</h3>
+  
+    <div class="cont">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3"></div>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th>CO90922A1</th>
+                        <td>{{ todayWithPipe }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+                
+                <br>
+                <br>                
+                <form class="login-form row g-3" method="post" action="#">
+
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+
+                        <label for="inputEmail4" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Fecha de Asignación</label>
+                        <input type="date" class="form-control" id="inputPassword4">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Descripción</label>
+                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inputAddress" class="form-label">Estado</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label for="inputAddress" class="form-label">Estatus</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Creado" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Prioridad</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Baja</option>
+                          <option>Media</option>
+                          <option>Alta</option>
+                          <option>Urgente</option>
+                        </select>
+
+                        <label for="inputState" class="form-label">Especialidad</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Hardware</option>
+                          <option>Software</option>
+                          <option>Mantenimiento</option>
+                        </select>
+
+                        <label for="inputState" class="form-label">Especialista</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Panchito Pérez</option>
+                          <option>Juanito Lópex</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Cambiar estatus</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Creado</option>
+                          <option>Atendido</option>
+                          <option>Asignado</option>
+                          <option>En espera</option>
+                          <option>En proceso</option>
+                          <option>Resuelto</option>
+                          <option>Validado</option>
+                          <option>Cancelado</option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div> -->
+
+                    <div class="col-12">
+                        <button class="btn btn-link">Comentarios</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-dark">Asignar</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-3"></div>
+            </div>
+        </div>
+    
+</body>
+</html>
+
+
+<script>
+
+</script>

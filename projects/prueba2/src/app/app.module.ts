@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { RecuperarContrasenaComponent } from './componentes/recuperar-contrasena/recuperar-contrasena.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { TicketComponent } from './componentes/ticket/ticket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecuperarContrasenaComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
