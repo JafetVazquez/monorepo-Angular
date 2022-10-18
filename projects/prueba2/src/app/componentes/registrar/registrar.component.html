@@ -40,12 +40,19 @@
             <h5 class="text-center pt-3">Ingresa tus datos</h5>
             <form class="login-form" method="post" action="#">
                 <div class="mb-3 bg-color">
-                    <label>Nombre Completo</label>
+                    <label>Nombre(s)</label>
                     <input type="text" name="nombre" class="form-control" required>
                 </div><br>
                 <div class="mb-3 bg-color">
-                    <label>Profesión</label>
-                    <input type="text" class="form-control" required>
+                    <label>Apellidos</label>
+                    <input type="text" name="nombre" class="form-control" required>
+                </div><br>
+                <div class="mb-3 bg-color">
+                    <label for="inputState" class="form-label">Rol</label>
+                    <select id="inputState" class="form-select">
+                      <option selected>Operador</option>
+                      <option>Especialista</option>
+                    </select>
                 </div><br>
                 <div class="mb-3 bg-color">
                     <label>Correo electrónico</label>
@@ -64,7 +71,6 @@
                     <label>¿Ya tienes una cuenta?</label>.   
                     <a routerLink="/" class="a">Inicia sesión</a>
                 </div>
-
                 <div class="text-center pt-3 pb-3">
                     <label>Crear ticket (ejemplo)</label>.   
                     <a routerLink="ticket" class="a">Ticket</a>
