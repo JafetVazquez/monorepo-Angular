@@ -1,0 +1,22 @@
+<div class="cont">
+    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableExample">
+
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let group of data">
+                <td>{{group.userId}}</td>
+                <td>{{group.id}}</td>
+                <td>{{group.title}}</td>
+                <td>{{group.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

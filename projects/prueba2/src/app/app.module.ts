@@ -12,6 +12,8 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
 import { TicketComponent } from './componentes/ticket/ticket.component';
 import { CommentsComponent } from './componentes/comments/comments.component';
 import { HistorialComponent } from './componentes/historial/historial.component';
+import { DataTablesModule } from "angular-datatables";
+import { TicketsComponent } from './componentes/tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { HistorialComponent } from './componentes/historial/historial.component'
     RegistrarComponent,
     TicketComponent,
     CommentsComponent,
-    HistorialComponent
+    HistorialComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
