@@ -6,6 +6,7 @@ import { User1Component } from "./users/user1/user1.component";
 import { RecuperarContrasenaComponent } from "./componentes/recuperar-contrasena/recuperar-contrasena.component";
 import { TicketComponent } from "./componentes/ticket/ticket.component";
 import { CommentsComponent } from "./componentes/comments/comments.component";
+import { HistorialComponent } from "./componentes/historial/historial.component";
 
 
 
@@ -38,6 +39,10 @@ const routes: Routes = [
     {
         path:'registrar/ticket/comments',
         component: CommentsComponent
+    },
+    {
+        path:'registrar/ticket/historial',
+        component: HistorialComponent
     }
 
 ];

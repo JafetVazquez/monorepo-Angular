@@ -11,6 +11,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { TicketComponent } from './componentes/ticket/ticket.component';
 import { CommentsComponent } from './componentes/comments/comments.component';
+import { HistorialComponent } from './componentes/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommentsComponent } from './componentes/comments/comments.component';
     LoginComponent,
     RegistrarComponent,
     TicketComponent,
-    CommentsComponent
+    CommentsComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,
