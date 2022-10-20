@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col">
+        <ul>
+            <li style="cursor: pointer;" *ngFor="let todo of todos">
+                <a (click)="showTodo(todo.id, todo.title, todo.completed)">
+                {{ todo.title }} <------->
+                {{ todo.userId }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

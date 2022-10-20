@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col">
+        <ul>
+            <li *ngFor="let al of all">
+                <h5>{{ al.title }}</h5>
+                {{ al.id }}
+
+                <small>
+                    <span class="badge bg-success">
+                        {{ al.completed }}
+                    </span>
+                </small>
+
+            </li>
+        </ul>
+    </div>
+</div>

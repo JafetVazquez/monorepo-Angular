@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col">
+        <ul>
+            <li *ngFor="let post of posts">
+                <a routerLink="" (click)="showComments(post.id)">
+                {{ post.title }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

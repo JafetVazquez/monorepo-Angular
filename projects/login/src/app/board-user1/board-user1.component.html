@@ -1,0 +1,39 @@
+<form [formGroup]="formContact" (ngSubmit)="submit()">
+    <p>Nombre:
+      <input type="text" class="form-control-lg" formControlName="nombre" required>
+      <span *ngIf="this.formContact.get('nombre')?.errors?.['required']">
+        (El nombre no puede quedar vacío)
+      </span>
+      <span *ngIf="this.formContact.get('nombre')?.errors?.['minlength']">
+        (Debe tener como mínimo 10 caracteres)
+      </span>
+    </p>
+    <p>Mail:
+      <input type="text" class="input-group-text" formControlName="mail">
+      <span *ngIf="this.formContact.get('mail')?.errors?.['required']">
+        (El mail no puede quedar vacío)
+      </span>
+      <span *ngIf="this.formContact.get('mail')?.errors?.['email']">
+        (El mail no es válido)
+      </span>
+    </p>
+    <p>Mensaje<br>
+      <textarea rows="10" cols="70" formControlName="mensaje" class="container-sm"></textarea>
+    </p>
+    <div *ngIf="this.formContact.get('mensaje')?.errors?.['required']">
+      (El mensaje no puede quedar vacío)
+    </div>
+    <div *ngIf="this.formContact.get('mensaje')?.errors?.['maxlength']">
+      (Debe tener como máximo 500 caracteres)
+    </div>
+    <button type="button" class="btn btn-dark" type="submit" >Confirmar</button>
+
+  </form>
+
+  <br>
+  <br>
+
+  <div class="position-absolute bottom-0 start-0">
+    <button type="button" class="btn btn-dark" (click)="boton()">Esta es una alerta</button>
+  </div>
+  <div>{{resultado}}</div>
