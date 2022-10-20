@@ -1,12 +1,14 @@
 <div class="cont">
     <table class="table table-striped table-bordered table-sm row-border hover" id="datatableExample">
 
-        <thead>
+        <thead class="thead-color">
             <tr>
-                <th>User ID</th>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Body</th>
+                <th>Folio</th>
+                <th>Título</th>
+                <th>Operador</th>
+                <th>Fecha</th>
+                <th>Estatus</th>
+                <th>Prioridad</th>
             </tr>
         </thead>
 
@@ -16,6 +18,8 @@
                 <td>{{group.id}}</td>
                 <td>{{group.title}}</td>
                 <td>{{group.body}}</td>
+                <td>{{group.estatus}}</td>
+                <td>{{group.prioridad}}</td>
             </tr>
         </tbody>
     </table>

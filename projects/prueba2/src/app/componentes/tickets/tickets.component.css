@@ -9,4 +9,18 @@
     overflow:auto;
     box-sizing: border-box;
     padding:0 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(217, 235, 235);
+  }
+
+.thead-color{
+    background-color: #017999;
+}
+.table-hover tbody tr:hover{
+    background-color: #6EB8CC;
+    color: #6EB8CC;
 }

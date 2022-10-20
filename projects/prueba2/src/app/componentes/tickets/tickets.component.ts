@@ -18,7 +18,8 @@ export class TicketsComponent implements OnInit {
           pagingType: 'full_numbers',
           pageLength: 5,
           processing: true,
-          lengthMenu: [5, 10, 25]
+          lengthMenu: [5, 10, 25],
+          
         });
       }, 1);
     }, error => console.log(error)
