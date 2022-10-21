@@ -37,8 +37,21 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="crud">CRUD</a> 
         </li>
+
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a class="nav-link" routerLink="admin">Admin</a> 
+        </li>
+
+        <li class="nav-item" *ngIf="showModeratorBoard">
+          <a class="nav-link" routerLink="moderador">Moderador</a> 
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="user" *ngIf="isLoggedIn">Usuario</a> 
+        </li>
         
       </ul>
+
       <div class="d-flex">
           <!-- Default checked -->
           <button (click)="toggleDarkTheme()">Dark Theme</button>
@@ -48,5 +61,25 @@
         <!-- Default checked -->
         <button (click)="catFacts()">Cat Facts</button>
       </div>
+
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="registrar">Registrarse</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="inicio_sesion">Login</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="perfil">{{username}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Cerrar sesión</a>
+        </li>
+      </ul>
     </div>
   </nav>

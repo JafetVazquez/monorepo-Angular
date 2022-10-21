@@ -5,10 +5,10 @@ import { Observable } from "rxjs";
 const AUTH_API = 'http://localhost:8080/api/auth/';
 
 const httpOptions = {
-  Headers: new HttpHeaders({
+  headers: new HttpHeaders({
     'Content-Type': 'application/json'
   })
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -17,18 +17,18 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<any>{
+  login(credentials: any): Observable<any>{
     return this.http.post(AUTH_API + 'signin', {
-      username,
-      password
-    });
+      username: credentials.username,
+      password: credentials.password
+    }, httpOptions);
   }
 
-  register(username: string, email: string, password: string): Observable<any>{
+  register(user: any): Observable<any>{
     return this.http.post(AUTH_API + 'signup', {
-      username,
-      email,
-      password
-    });
+      username: user.username,
+      email: user.email,
+      password: user.password
+    }, httpOptions);
   }
 }

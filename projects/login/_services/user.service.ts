@@ -30,7 +30,7 @@ export class UserService {
   }
 
   getGestorBoard(): Observable<any>{
-    return this.http.get(API_URL + 'gestor', {
+    return this.http.get(API_URL + 'moderator', {
       responseType: 'text'
     });
   }

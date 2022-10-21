@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
+import { AppInitService } from "./app-init.service";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,20 @@ import { EditEmployeeComponent } from './CRUD/edit-employee/edit-employee.compon
 import { ViewEmployeeComponent } from './CRUD/view-employee/view-employee.component';
 import { RolDirective } from './directives/rol.directive';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { AdminComponent } from './reg_log/admin/admin.component';
+import { ModeratorComponent } from './reg_log/moderator/moderator.component';
+import { UserComponent } from './reg_log/user/user.component';
+import { MainComponent } from './reg_log/main/main.component';
+import { InicioSesionComponent } from './reg_log/inicio-sesion/inicio-sesion.component';
+import { PerfilComponent } from './reg_log/perfil/perfil.component';
+import { RegistorComponent } from './reg_log/registor/registor.component';
+
+export function initializeApp1(appInitService: AppInitService){
+  return(): Promise<any> => {
+    return appInitService.Init();
+  }
+}
+
 
 @NgModule({
   declarations: [
@@ -53,7 +68,14 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     AddEmployeeComponent,
     EditEmployeeComponent,
     ViewEmployeeComponent,
-    RolDirective
+    RolDirective,
+    AdminComponent,
+    ModeratorComponent,
+    UserComponent,
+    MainComponent,
+    InicioSesionComponent,
+    PerfilComponent,
+    RegistorComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +85,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     ReactiveFormsModule,
     NgxPermissionsModule.forRoot()
   ],
-  providers: [authInterceptorProviders, EmployeesService, PostsComponent],
+  providers: [authInterceptorProviders, EmployeesService, PostsComponent, AppInitService, { provide: APP_INITIALIZER, useFactory: initializeApp1, deps: [AppInitService], multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

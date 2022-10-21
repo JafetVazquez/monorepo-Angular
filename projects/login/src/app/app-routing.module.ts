@@ -12,6 +12,13 @@ import { CrudComponent } from './CRUD/crud/crud.component';
 import { AddEmployeeComponent } from './CRUD/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './CRUD/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './CRUD/edit-employee/edit-employee.component';
+import { NgxPermissionsGuard } from "ngx-permissions";
+import { RegistorComponent } from './reg_log/registor/registor.component';
+import { InicioSesionComponent } from './reg_log/inicio-sesion/inicio-sesion.component';
+import { AdminComponent } from './reg_log/admin/admin.component';
+import { ModeratorComponent } from './reg_log/moderator/moderator.component';
+import { UserComponent } from './reg_log/user/user.component';
+import { PerfilComponent } from './reg_log/perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -62,14 +69,50 @@ const routes: Routes = [
   },
 
   {
+    path: 'registrar',
+    component: RegistorComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'inicio_sesion',
+    component: InicioSesionComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'admin',
+    component: AdminComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'moderador',
+    component: ModeratorComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'user',
+    component: UserComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+    pathMatch: 'full'
+  },
+
+  {
     path: 'crud',
-    component: ViewEmployeeComponent,
+    component: AddEmployeeComponent,
     pathMatch: 'full'
   },
 
   {
     path: 'ViewEmployee/:employeeId',
-    component: ViewEmployeeComponent
+    component: AddEmployeeComponent
   },
 
   {
@@ -81,6 +124,18 @@ const routes: Routes = [
     path: 'EditEmployee:/employeeId',
     component: EditEmployeeComponent
   },
+
+  // {
+  //   path: 'admin',
+  //   component: ViewEmployeeComponent,
+  //   canActivate: [NgxPermissionsGuard],
+  //   data: {
+  //     permissions: {
+  //       only: ['ADMIN'],
+  //       redirectTo: '/forbidden'
+  //     }
+  //   }
+  // },
 
   {
     path: '',
