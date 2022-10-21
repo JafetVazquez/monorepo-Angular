@@ -1,6 +1,41 @@
-<div class="cont">
-    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableExample">
+<br><h3 class="text-center pt-3">TICKETS</h3>
+<div class="cont"> <br>
+    <div class="row">
+        <div class="col sm-mb-3 float: right padding:10 px">
+            <div class="form-group">
+                <label for="sel1" class="form-label">Fecha:</label><br>
+                <input type="date" class="dateadded"><br>
+            </div><br><br><br>
+            <div class="row justify-content-aling-center">
+                <div class="dropdown col-md-4 ms-md-auto">
+                    <label for="">Selecciona un proyecto</label><br>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Selecciona un proyecto
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Proyecto 1</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown col-md-4 ms-md-auto">
+                    <label for="">Selecciona un área </label><br>
 
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Selecciona un área
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableExample">
         <thead class="thead-color">
             <tr>
                 <th>Folio</th>
@@ -14,10 +49,10 @@
 
         <tbody>
             <tr *ngFor="let group of data">
-                <td>{{group.userId}}</td>
                 <td>{{group.id}}</td>
-                <td>{{group.title}}</td>
-                <td>{{group.body}}</td>
+                <td>{{group.name}}</td>
+                <td>{{group.email}}</td>
+                <td>{{group.address}}</td>
                 <td>{{group.estatus}}</td>
                 <td>{{group.prioridad}}</td>
             </tr>
