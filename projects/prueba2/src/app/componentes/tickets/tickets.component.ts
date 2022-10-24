@@ -10,7 +10,7 @@ export class TicketsComponent implements OnInit {
   data: any;
 
   constructor(private http: HttpClient) {
-    this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((data) => {
+    this.http.get('https://retoolapi.dev/GUdOvl/data').subscribe((data) => {
       this.data = data;
 
       setTimeout(()=>{
