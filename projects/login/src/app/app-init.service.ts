@@ -1,4 +1,4 @@
-import { Injectable }  from '@angular/core';
+import { Injectable, APP_INITIALIZER, NgModule }  from '@angular/core';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { NgxPermissionsService, NgxRolesService } from "ngx-permissions";
  
