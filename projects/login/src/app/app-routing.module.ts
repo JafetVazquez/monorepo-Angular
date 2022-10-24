@@ -19,6 +19,7 @@ import { AdminComponent } from './reg_log/admin/admin.component';
 import { ModeratorComponent } from './reg_log/moderator/moderator.component';
 import { UserComponent } from './reg_log/user/user.component';
 import { PerfilComponent } from './reg_log/perfil/perfil.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -100,7 +101,7 @@ const routes: Routes = [
 
   {
     path: 'perfil',
-    component: PerfilComponent,
+    component: ProfileComponent,
     pathMatch: 'full'
   },
 
