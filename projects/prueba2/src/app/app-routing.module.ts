@@ -8,6 +8,8 @@ import { TicketComponent } from "./componentes/ticket/ticket.component";
 import { CommentsComponent } from "./componentes/comments/comments.component";
 import { HistorialComponent } from "./componentes/historial/historial.component";
 import { TicketsComponent } from "./componentes/tickets/tickets.component";
+import { SidebarComponent } from "ng-cdbangular";
+import { DashboardComponent } from "./componentes/dashboard/dashboard.component";
 
 
 
@@ -17,6 +19,12 @@ const routes: Routes = [
     {
         path: '',
         component: LoginComponent,
+        pathMatch: 'full'
+    },
+
+    {
+        path: 'ticket',
+        component: TicketComponent,
         pathMatch: 'full'
     },
 
@@ -34,20 +42,32 @@ const routes: Routes = [
         component: LoginComponent
     },
     {
+        path:'dashboard',
+        component: DashboardComponent
+    },
+    {
         path:'registrar/ticket',
         component: TicketComponent
     },
     {
-        path:'registrar/ticket/comments',
+        path:'ticket/comments',
         component: CommentsComponent
     },
     {
-        path:'registrar/ticket/historial',
+        path:'ticket/historial',
         component: HistorialComponent
     },
     {
-        path:'registrar/ticket/tickets',
+        path:'ticket/tickets',
         component: TicketsComponent
+    },
+    {
+        path:'sidebar',
+        component:SidebarComponent
+    },
+    {
+        path:'sidebar/tickets',
+        component:SidebarComponent
     }
 
 ];

@@ -14,6 +14,11 @@ import { CommentsComponent } from './componentes/comments/comments.component';
 import { HistorialComponent } from './componentes/historial/historial.component';
 import { DataTablesModule } from "angular-datatables";
 import { TicketsComponent } from './componentes/tickets/tickets.component';
+import { SidebarComponent } from './componentes/sidebar/sidebar.component';
+
+import { CDBFreeModule } from 'ng-cdbangular';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { Sidebar2Component } from './componentes/sidebar2/sidebar2.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +29,18 @@ import { TicketsComponent } from './componentes/tickets/tickets.component';
     TicketComponent,
     CommentsComponent,
     HistorialComponent,
-    TicketsComponent
+    TicketsComponent,
+    SidebarComponent,
+    DashboardComponent,
+    Sidebar2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    CDBFreeModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
