@@ -1,3 +1,20 @@
 {
-    "todos": []
+  "people": [
+    {
+      "id": 1,
+      "name": "Don Bradman"
+    },
+    {
+      "id": "5",
+      "name": "Pedro"
+    },
+    {
+      "id": "4",
+      "name": "juan"
+    },
+    {
+      "id": "8",
+      "name": "Jafet"
+    }
+  ]
 }
