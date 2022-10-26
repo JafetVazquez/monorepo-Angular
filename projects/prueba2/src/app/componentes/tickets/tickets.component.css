@@ -103,9 +103,7 @@ textarea{
     padding: 0px 4px 0px 4px;
     min-height: 20px;
 }
-.table{
-    cursor: pointer;
-}
+
 
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgb(217, 235, 235);
@@ -122,10 +120,4 @@ textarea{
     margin-right: 12px;
     float: right;
     
-}
-button{
-    cursor: pointer;
-}
-.dateadded{
-    cursor: pointer;
 }
