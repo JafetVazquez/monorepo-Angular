@@ -24,7 +24,7 @@ export class Rest1Service {
   }
 
   getUser(id: any): Observable<Person>{
-    return this.http.get<Person>(this.apiURL + '/people/' + id).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Person>(this.apiURL + '/people' + id).pipe(retry(1), catchError(this.handleError));
   }
 
   createUser(user: any): Observable<Person>{
@@ -33,11 +33,11 @@ export class Rest1Service {
   }
 
   updateUser(id: any, user: any): Observable<Person>{
-    return this.http.put<Person>(this.apiURL + '/people/' + id, JSON.stringify(user), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.put<Person>(this.apiURL + '/people' +id, JSON.stringify(user), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   deleteUser(id: any){
-    return this.http.delete<Person>(this.apiURL + '/people/' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.delete<Person>(this.apiURL + '/people' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   handleError(error: any){
