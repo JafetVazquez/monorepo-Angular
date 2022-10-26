@@ -21,30 +21,30 @@ export class Rest1Service {
   };
 
 
-  // getUsers(): Observable<Person>{
-
-  //   const headers = new HttpHeaders({
-  //     'header2': 'ola diabloo',
-  //     'ngrok-skip-browser-warning': ''
-  //   })
-
-  //   return this.http.get<Person>(this.apiURL + '/people', {headers}).pipe(retry(1), catchError(this.handleError));
-  // }
-
-  getUsers(): Observable<any>{
+  getUsers(): Observable<Person>{
 
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
-      'Access-Control-Allow-Origin': 'http://localhost:4200',
-      'Access-Control-Allow-Credentials': 'true',
-      'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-      'ngrok-skip-browser-warning': 'ngrok-skip-browser-warning',
-      'User-Agent': 'custom/non-standard'
+      'header2': 'ola diabloo',
+      'ngrok-skip-browser-warning': ''
     })
 
-    return this.http.get<any>(this.ngRok + '/ticket', {headers}).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Person>(this.apiURL + '/people', {headers}).pipe(retry(1), catchError(this.handleError));
   }
+
+  // getUsers(): Observable<any>{
+
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
+  //     'Access-Control-Allow-Origin': 'http://localhost:4200',
+  //     'Access-Control-Allow-Credentials': 'true',
+  //     'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+  //     'ngrok-skip-browser-warning': 'ngrok-skip-browser-warning',
+  //     'User-Agent': 'custom/non-standard'
+  //   })
+
+  //   return this.http.get<any>(this.ngRok + '/ticket', {headers}).pipe(retry(1), catchError(this.handleError));
+  // }
 
   getUser(id: any): Observable<Person>{
     return this.http.get<Person>(this.apiURL + '/people' + id).pipe(retry(1), catchError(this.handleError));
