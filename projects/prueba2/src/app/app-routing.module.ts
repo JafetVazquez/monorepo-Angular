@@ -40,6 +40,10 @@ const routes: Routes = [
         component: TicketComponent
     },
     {
+        path:'tickets',
+        component: TicketsComponent
+    },
+    {
         path:'registrar/ticket/comments',
         component: CommentsComponent
     },
