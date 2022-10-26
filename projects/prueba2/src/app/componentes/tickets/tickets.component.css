@@ -121,3 +121,6 @@ textarea{
     float: right;
     
 }
+.table{
+    cursor: pointer;
+}
