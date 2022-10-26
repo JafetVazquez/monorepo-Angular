@@ -21,6 +21,8 @@ import { UserComponent } from './reg_log/user/user.component';
 import { PerfilComponent } from './reg_log/perfil/perfil.component';
 import { ProfileComponent } from './profile/profile.component';
 import { User2Component } from './user2/user2.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 const routes: Routes = [
   {
@@ -109,6 +111,18 @@ const routes: Routes = [
   {
     path: 'crud',
     component: AddEmployeeComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'user-list',
+    component: UserListComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'user-edit/:id',
+    component: UserEditComponent,
     pathMatch: 'full'
   },
 

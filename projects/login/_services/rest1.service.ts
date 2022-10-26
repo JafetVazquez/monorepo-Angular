@@ -10,6 +10,7 @@ import { retry, catchError } from "rxjs/operators";
 export class Rest1Service {
 
   apiURL = 'http://localhost:3000';
+  ngRok = 'https://0c1e-187-202-92-166.ngrok.io';
 
   constructor(private http: HttpClient) { }
 
@@ -19,9 +20,31 @@ export class Rest1Service {
     })
   };
 
+
   getUsers(): Observable<Person>{
-    return this.http.get<Person>(this.apiURL + '/people').pipe(retry(1), catchError(this.handleError));
+
+    const headers = new HttpHeaders({
+      'header2': 'ola diabloo',
+      'ngrok-skip-browser-warning': ''
+    })
+
+    return this.http.get<Person>(this.apiURL + '/people', {headers}).pipe(retry(1), catchError(this.handleError));
   }
+
+  // getUsers(): Observable<any>{
+
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
+  //     'Access-Control-Allow-Origin': 'http://localhost:4200',
+  //     'Access-Control-Allow-Credentials': 'true',
+  //     'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+  //     'ngrok-skip-browser-warning': 'ngrok-skip-browser-warning',
+  //     'User-Agent': 'custom/non-standard'
+  //   })
+
+  //   return this.http.get<any>(this.ngRok + '/ticket', {headers}).pipe(retry(1), catchError(this.handleError));
+  // }
 
   getUser(id: any): Observable<Person>{
     return this.http.get<Person>(this.apiURL + '/people' + id).pipe(retry(1), catchError(this.handleError));

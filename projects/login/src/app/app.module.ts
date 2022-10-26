@@ -40,6 +40,7 @@ import { InicioSesionComponent } from './reg_log/inicio-sesion/inicio-sesion.com
 import { PerfilComponent } from './reg_log/perfil/perfil.component';
 import { RegistorComponent } from './reg_log/registor/registor.component';
 import { User2Component } from './user2/user2.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 export function initializeApp1(appInitService: AppInitService){
   return(): Promise<any> => {
@@ -77,7 +78,8 @@ export function initializeApp1(appInitService: AppInitService){
     InicioSesionComponent,
     PerfilComponent,
     RegistorComponent,
-    User2Component
+    User2Component,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
