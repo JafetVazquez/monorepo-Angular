@@ -2,19 +2,23 @@
   "people": [
     {
       "id": 1,
-      "name": "Don Bradman"
+      "name": "Don Bradman2"
     },
     {
       "id": "5",
       "name": "Pedro"
     },
     {
-      "id": "4",
-      "name": "juan"
-    },
-    {
       "id": "8",
       "name": "Jafet"
+    },
+    {
+      "id": "6",
+      "name": "hfgh"
+    },
+    {
+      "id": "9",
+      "name": "fdsf"
     }
   ]
 }
