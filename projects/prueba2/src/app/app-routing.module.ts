@@ -40,15 +40,15 @@ const routes: Routes = [
         component: TicketComponent
     },
     {
-        path:'registrar/ticket/comments',
+        path:'ticket/comments',
         component: CommentsComponent
     },
     {
-        path:'registrar/ticket/historial',
+        path:'ticket/historial',
         component: HistorialComponent
     },
     {
-        path:'registrar/ticket/tickets',
+        path:'ticket/tickets',
         component: TicketsComponent
     },
     {

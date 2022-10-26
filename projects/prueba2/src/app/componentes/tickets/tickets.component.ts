@@ -7,10 +7,12 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./tickets.component.css']
 })
 export class TicketsComponent implements OnInit {
+
+  apiURL = 'http://localhost:3000/tickets'
   data: any;
 
   constructor(private http: HttpClient) {
-    this.http.get('https://retoolapi.dev/GUdOvl/data').subscribe((data) => {
+    this.http.get(this.apiURL).subscribe((data) => {
       this.data = data;
 
       setTimeout(()=>{
