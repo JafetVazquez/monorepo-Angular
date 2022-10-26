@@ -1,0 +1,93 @@
+<div class="container" id="list">
+  <!-- Button trigger modal -->
+  <button type="button" 
+  class="btn bi bi-list px-3"
+  data-bs-toggle="offcanvas" 
+  data-bs-target="#offcanvasExample" 
+  id="button"
+
+  >
+Helpdesk
+  </button>
+</div>
+<!-- <nav class="navbar navbar-expand-lg navbar-light py-4" style="background-color:write;">
+    
+    </div>
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="submen">
+        <li class="nav-item bi bi-bell-fill">  
+        </li>
+        <li class="nav-item bi bi-envelope-fill">
+        </li> 
+      </ul>
+      <div class="offcanvas-body">
+        <li class="nav-item dropdown">
+            <a class="nav-link 
+             dropdown-toggle 
+             bi bi-person-fill " 
+             routerLink="/"
+             id="navbarDropdown" 
+             role="button" 
+             data-bs-toggle="dropdown"
+             aria-expanded="false"
+             >
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" routerLink="/perfil">Mi perfil</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/cerrar_sesion">Cerrar sesión</a>
+              </li>
+            </ul>
+          </li>
+      </div>
+  </nav> -->
+<div >
+    <!-- Sidebar -->
+  <div class="offcanvas offcanvas-start" 
+  tabindex="-1" 
+  id="offcanvasExample" 
+  aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title" id="offcanvasExampleLabel">Helpdesk</h4>
+      <button type="button" 
+      class="btn-close text-reset" 
+      data-bs-dismiss="offcanvas" 
+      aria-label="Close">
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav nav-pills flex-column mb-auto" id="lista">
+        <li class="nav-item ">
+          <a routerLink="/inicio" class="nav-link active bi bi-house-door-fill" aria-current="page">
+            Home
+          </a>
+        </li>
+        <li >
+          <a routerLink="/ticket" class="nav-link link-dark bi bi-layout-text-window"> 
+            Tickets
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-link link-dark bi bi-table">
+            Proyectos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-link link-dark bi bi-bar-chart-fill">
+            Estadísticas
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-link link-dark bi bi-people-fill">
+            Usuarios
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
