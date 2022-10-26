@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserEditComponent } from './user-edit.component';
+import { Sidebar2Component } from './sidebar2.component';
 
-describe('UserEditComponent', () => {
-  let component: UserEditComponent;
-  let fixture: ComponentFixture<UserEditComponent>;
+describe('Sidebar2Component', () => {
+  let component: Sidebar2Component;
+  let fixture: ComponentFixture<Sidebar2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserEditComponent ]
+      declarations: [ Sidebar2Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserEditComponent);
+    fixture = TestBed.createComponent(Sidebar2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

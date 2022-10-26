@@ -3,7 +3,7 @@
         <h3 class="mb-3 text-center">crear user</h3>
 
         <div class="form-group">
-            <input type="text" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" [(ngModel)]="userDetails.id" class="form-control" placeholder="ID">
+            <input type="text" [(ngModel)]="userDetails.id" class="form-control" placeholder="ID">
         </div>
 
         <div class="form-group">
@@ -12,10 +12,6 @@
 
         <div class="form-group">
             <button class="btn btn-success btn-lg btn-block" (click)="addUser()">Crear User</button>
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-dark btn-lg btn-block" routerLink="/user-list">Lista</button>
         </div>
     </div>
 </div>
