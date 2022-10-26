@@ -8,6 +8,9 @@ import { TicketComponent } from "./componentes/ticket/ticket.component";
 import { CommentsComponent } from "./componentes/comments/comments.component";
 import { HistorialComponent } from "./componentes/historial/historial.component";
 import { TicketsComponent } from "./componentes/tickets/tickets.component";
+import { SidebarComponent } from "./componentes/sidebar/sidebar.component";
+import { Sidebar2Component } from "./componentes/sidebar2/sidebar2.component";
+import { DashboardComponent } from "./componentes/dashboard/dashboard.component";
 
 
 
@@ -19,7 +22,6 @@ const routes: Routes = [
         component: LoginComponent,
         pathMatch: 'full'
     },
-
     {
         path: 'recuperar-contrasena',
         component: RecuperarContrasenaComponent,
@@ -34,7 +36,7 @@ const routes: Routes = [
         component: LoginComponent
     },
     {
-        path:'registrar/ticket',
+        path:'ticket',
         component: TicketComponent
     },
     {
@@ -48,6 +50,18 @@ const routes: Routes = [
     {
         path:'registrar/ticket/tickets',
         component: TicketsComponent
+    },
+    {
+        path:'sidebar',
+        component:SidebarComponent
+    },
+    {
+        path:'sidebar2',
+        component:Sidebar2Component
+    },
+    {
+        path:'dashboard',
+        component:DashboardComponent
     }
 
 ];
