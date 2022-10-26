@@ -1,0 +1,31 @@
+.navbar{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+
+}
+
+.offcanvas{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #aec6d0;
+    font-size: larger;
+
+}
+
+#lista{
+    color: green;
+
+}
+#button{
+    font-size: larger;
+    color: black;
+    width: 40; 
+    height: 40;
+}
+#submen{
+    width: 40;
+    height: 40;
+
+}
+#list{
+    font-size: 2em;
+}

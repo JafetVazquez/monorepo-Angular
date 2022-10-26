@@ -1,1 +1,56 @@
-<p>sidebar2 works!</p>
+<div class="container" id="list">
+    <!-- Button trigger modal -->
+    <button type="button" 
+    class="btn bi bi-list px-3"
+    data-bs-toggle="offcanvas" 
+    data-bs-target="#offcanvasExample" 
+    id="button"
+    >
+  Helpdesk
+    </button>
+  </div>
+  <div >
+    <!-- Sidebar -->
+  <div class="offcanvas offcanvas-start" 
+  tabindex="-1" 
+  id="offcanvasExample" 
+  aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title" id="offcanvasExampleLabel">Helpdesk</h4>
+      <button type="button" 
+      class="btn-close text-reset" 
+      data-bs-dismiss="offcanvas" 
+      aria-label="Close">
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav nav-pills flex-column mb-auto" id="lista">
+        <li class="nav-item ">
+          <a routerLink="/inicio" class="nav-link bi bi-house-door-fill" aria-current="page" >
+            Home
+          </a>
+        </li>
+        <li >
+          <a routerLink="/tickets" class="nav-link link-dark bi bi-layout-text-window"> 
+            Tickets
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-link link-dark bi bi-table">
+            Proyectos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-link link-dark bi bi-bar-chart-fill">
+            Estadísticas
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-link link-dark bi bi-people-fill">
+            Usuarios
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
