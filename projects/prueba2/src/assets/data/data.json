@@ -46,5 +46,21 @@
       "ticket_proyecto": null,
       "ticket_areaorigen": null
     }
+  ],
+
+  "users":[
+    {
+      "id": 1,
+      "nombre": "Juanito",
+      "apellidos": "Perez",
+      "correo": "fadkjfa@gmail.com",
+      "password": "12345",
+      "codigo": "3ert",
+      "fc_crea": null,
+      "fc_culm": null,
+      "rol": "gestor",
+      "proyecto": "IPN"
+
+    }    
   ]
 }
