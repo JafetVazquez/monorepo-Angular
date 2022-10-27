@@ -41,9 +41,10 @@
             <table>
                 <tbody>
                     <tr>
-                        <th>CO90922A1</th>
+                        <th>Folio: {{folio}}</th>
                         <td>{{ todayWithPipe }}</td>
                     </tr>
+
                 </tbody>
             </table>
             
@@ -51,7 +52,7 @@
                 
                 <br>
                 <br>                
-                <form class="login-form row g-3" method="post" action="#">
+                <form formGroup="ticketData" class="login-form row g-3" method="post" action="#">
 
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Título</label>
@@ -64,6 +65,11 @@
                     <div class="col-md-3">
                         <label for="inputPassword4" class="form-label">Fecha de Asignación</label>
                         <input type="date" class="form-control" id="inputPassword4">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="inputPassword4" class="form-label" hidden>ID</label>
+                        <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="id" hidden>
                     </div>
 
                     <div class="col-12">
@@ -163,6 +169,6 @@
 </html>
 
 
-<script>
-
+<script type="text/javascript">
+    
 </script>

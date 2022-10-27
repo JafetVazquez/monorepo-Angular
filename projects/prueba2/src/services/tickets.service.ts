@@ -31,15 +31,15 @@ export class TicketsService {
     return this.http.get<Tickets>(this.apiURL + '/tickets', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-  createTicket(id: number): Observable<Tickets>{
+  createTicket(id: any): Observable<Tickets>{
     return this.http.post<Tickets>(this.apiURL + '/tickets', JSON.stringify(id), this.httpOptions).pipe(retry(1),catchError(this.handleError));
   }
 
-  updateTicket(id: number): Observable<Tickets>{
+  updateTicket(id: any): Observable<Tickets>{
     return this.http.put<Tickets>(this.apiURL + '/tickets' + id, JSON.stringify(id), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-  deleteTicket(id: number){
+  deleteTicket(id: any){
     return this.http.delete<Tickets>(this.apiURL + '/tickets' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 

@@ -1,5 +1,5 @@
 export class Tickets{
-    id!: number
+    id!: string
     folio!: string
     titulo!: string
     coordenadas!: string
