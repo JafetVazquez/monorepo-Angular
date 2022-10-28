@@ -2,7 +2,32 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DatePipe } from "@angular/common";
 import { Router } from "@angular/router";
 import { TicketsService } from "../../../services/tickets.service";
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Tickets } from "../../../assets/tickets";
+
+// interface Tickets {
+//   id: string;
+//   folio: string;
+//   titulo: string;
+//   coordenadas: string;
+//   evidencias: string;
+//   descripcion: string;
+//   comentario_t: string;
+//   fecha_creacion: string;
+//   fecha_atendido: string;
+//   fecha_asignado: string;
+//   fecha_proceso: string;
+//   fecha_resuelto: string;
+//   fecha_validado: string;
+//   fecha_cancelado: string;
+//   ticket_superior: string;
+//   ticket_usariocreador: string;
+//   ticket_especialistaasignado: string;
+//   ticket_tipoprioridad: string;
+//   ticket_tipopstatus: string;
+//   ticket_proyecto: string;
+//   ticket_areaorigen: string;
+// }
 
 @Component({
   selector: 'app-ticket',
@@ -15,7 +40,7 @@ export class TicketComponent implements OnInit {
   folio: string = '';
   // forms = FormGroup;
 
-  // @Input() ticketData = {
+  // ticketData: Tickets = {
   //   id: '',
   //   folio: '',
   //   titulo: '',
@@ -39,33 +64,34 @@ export class TicketComponent implements OnInit {
   //   ticket_areaorigen: ''
   // }
 
-  ticketData = new FormGroup({
-    id: new FormControl(''),
-    folio: new FormControl(''),
-    titulo: new FormControl(''),
-    coordenadas: new FormControl(''),
-    evidencias: new FormControl(''),
-    descripcion: new FormControl(''),
-    comentario_t: new FormControl(''),
-    fecha_creacion: new FormControl(''),
-    fecha_atendido: new FormControl(''),
-    fecha_asignado: new FormControl(''),
-    fecha_proceso: new FormControl(''),
-    fecha_resuelto: new FormControl(''),
-    fecha_validado: new FormControl(''),
-    fecha_cancelado: new FormControl(''),
-    ticket_superior: new FormControl(''),
-    ticket_usariocreador: new FormControl(''),
-    ticket_especialistaasignado: new FormControl(''),
-    ticket_tipoprioridad: new FormControl(''),
-    ticket_tipopstatus: new FormControl(''),
-    ticket_proyecto: new FormControl(''),
-    ticket_areaorigen: new FormControl('')
-  })
+  // ticketData = new FormGroup({
+  //   id: new FormControl(''),
+  //   folio: new FormControl(''),
+  //   titulo: new FormControl(''),
+  //   coordenadas: new FormControl(''),
+  //   evidencias: new FormControl(''),
+  //   descripcion: new FormControl(''),
+  //   comentario_t: new FormControl(''),
+  //   fecha_creacion: new FormControl(''),
+  //   fecha_atendido: new FormControl(''),
+  //   fecha_asignado: new FormControl(''),
+  //   fecha_proceso: new FormControl(''),
+  //   fecha_resuelto: new FormControl(''),
+  //   fecha_validado: new FormControl(''),
+  //   fecha_cancelado: new FormControl(''),
+  //   ticket_superior: new FormControl(''),
+  //   ticket_usariocreador: new FormControl(''),
+  //   ticket_especialistaasignado: new FormControl(''),
+  //   ticket_tipoprioridad: new FormControl(''),
+  //   ticket_tipopstatus: new FormControl(''),
+  //   ticket_proyecto: new FormControl(''),
+  //   ticket_areaorigen: new FormControl('')
+  // })
 
   today: Date = new Date();
   pipe = new DatePipe('en-US');
-  todayWithPipe: string | null | undefined;
+  todayWithPipe: string | null | undefined = '';
+  ticketModel = new Tickets("", this.folio, "", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
 
   constructor(public ticketsService: TicketsService, public router: Router) { }
 
@@ -73,14 +99,34 @@ export class TicketComponent implements OnInit {
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
 
     this.id = new Date().getMilliseconds().toString();
+    console.log(this.id);
+    
 
     this.folio = new Date().getTime().toString();
+    console.log(this.folio);
+
+    console.log(this.todayWithPipe);
+    
   }
 
   addTicket(){
-    this.ticketsService.createTicket(this.ticketData).subscribe((data: {}) => {
-      this.router.navigate(['/tickets'])
+    this.ticketsService.createTicket(this.ticketModel).subscribe((data: {}) => {
+      console.log(data);
+      
+      // this.router.navigate(['/tickets'])
     });
   }
 
+  formSend(){
+    console.log("formulario enviado: ", this.ticketModel);
+    alert("enviado");
+  }
+
+  submit(){
+    this.ticketsService.createTicket(this.ticketModel).subscribe((data: {}) => {
+      console.log("formulario enviado: ", this.ticketModel);
+
+      this.router.navigate(['/ticket/tickets'])
+    })
+  }
 }

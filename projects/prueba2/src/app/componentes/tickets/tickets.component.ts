@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { DataTablesModule } from "angular-datatables";
+
 
 @Component({
   selector: 'app-tickets',
@@ -13,7 +15,7 @@ export class TicketsComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     this.http.get(this.apiURL).subscribe((data) => {
-      this.data = data;
+      this.data = data;      
 
       setTimeout(()=>{
         $('#datatableExample').DataTable({
@@ -27,8 +29,7 @@ export class TicketsComponent implements OnInit {
       }, 1);
 
       
-    }, error => console.log(error)
-    );
+    });
   }
 
   ngOnInit(): void {

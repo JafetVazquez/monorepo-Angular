@@ -1,23 +1,25 @@
 export class Tickets{
-    id!: string
-    folio!: string
-    titulo!: string
-    coordenadas!: string
-    evidencias!: string
-    descripcion!: string
-    comentario_t!: string
-    fecha_creacion!: string
-    fecha_atendido!: string
-    fecha_asignado!: string
-    fecha_proceso!: string
-    fecha_resuelto!: string
-    fecha_validado!: string
-    fecha_cancelado!: string
-    ticket_superior!: string
-    ticket_usariocreador!: string
-    ticket_especialistaasignado!: string
-    ticket_tipoprioridad!: string
-    ticket_tipopstatus!: string
-    ticket_proyecto!: string
-    ticket_areaorigen!: string
+    constructor(
+        public id: string,
+        public folio: string,
+        public titulo: string,
+        public coordenadas: string,
+        public evidencias: string,
+        public descripcion: string,
+        public comentario_t: string,
+        public fecha_creacion: string | null | undefined,
+        public fecha_atendido: string,
+        public fecha_asignado: string,
+        public fecha_proceso: string,
+        public fecha_resuelto: string,
+        public fecha_validado: string,
+        public fecha_cancelado: string,
+        public ticket_superior: string,
+        public ticket_usariocreador: string,
+        public ticket_especialistaasignado: string,
+        public ticket_tipoprioridad: string,
+        public ticket_tipopstatus: string,
+        public ticket_proyecto: string,
+        public ticket_areaorigen: string
+    ){}
 }

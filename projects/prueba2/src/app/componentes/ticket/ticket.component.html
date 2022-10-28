@@ -52,45 +52,48 @@
                 
                 <br>
                 <br>                
-                <form formGroup="ticketData" class="login-form row g-3" method="post" action="#">
+                <form #f="ngForm" (ngSubmit)="submit()" class="login-form row g-3" method="post" action="#" >
 
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <input type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="ticketModel.titulo" required>
 
                         <label for="inputEmail4" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <input type="text" class="form-control" id="inputEmail4" name="usuario" [(ngModel)]="ticketModel.ticket_usariocreador" required>
                     </div>
 
                     <div class="col-md-3">
                         <label for="inputPassword4" class="form-label">Fecha de Asignación</label>
-                        <input type="date" class="form-control" id="inputPassword4">
+                        <input type="date" class="form-control" id="inputPassword4" name="fechaAsignacion" [(ngModel)]="ticketModel.fecha_asignado">
                     </div>
 
                     <div class="col-md-3">
                         <label for="inputPassword4" class="form-label" hidden>ID</label>
-                        <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="id" hidden>
+                        <input type="text" class="form-control" id="inputPassword4" name="id" value="{{id}}" placeholder="{{id}}" [(ngModel)]="ticketModel.id" hidden>
+
+                        <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="ticketModel.folio" name="folio" value="{{folio}}" hidden>
+
                     </div>
 
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Descripción</label>
-                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control" name="" id="" cols="30" rows="10" [(ngModel)]="ticketModel.descripcion" name="descripcion"></textarea>
                     </div>
 
                     <div class="col-md-6">
                         <label for="inputAddress" class="form-label">Estado</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketModel.ticket_tipopstatus" value="Ligado" name="estado">
                     </div>
 
                     <div class="col-md-6">
 
                         <label for="inputAddress" class="form-label">Estatus</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Creado" disabled>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Creado" disabled [(ngModel)]="ticketModel.ticket_tipopstatus" value="Creado" name="status">
                     </div>
 
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Prioridad</label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketModel.ticket_tipoprioridad" name="prioridad">
                           <option selected>Baja</option>
                           <option>Media</option>
                           <option>Alta</option>
@@ -98,27 +101,27 @@
                         </select>
 
                         <label for="inputState" class="form-label">Especialidad</label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketModel.ticket_especialistaasignado" name="especialidad">
                           <option selected>Hardware</option>
                           <option>Software</option>
                           <option>Mantenimiento</option>
                         </select>
 
                         <label for="inputState" class="form-label">Especialista</label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketModel.ticket_especialistaasignado" name="especialista">
                           <option selected>Panchito Pérez</option>
                           <option>Juanito López</option>
                         </select>
 
-                        <select id="areaOrigen" class="form-select" hidden>
+                        <select id="areaOrigen" class="form-select" [(ngModel)]="ticketModel.ticket_areaorigen">
                           <option selected>Recursos Humanos</option>
-                          <option>Juanito López</option>
+                          <option>Administración</option>
                         </select>
                     </div>
 
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Cambiar estatus</label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketModel.ticket_tipopstatus" name="cambiarEstatus">
                           <option selected>Creado</option>
                           <option>Atendido</option>
                           <option>Asignado</option>
@@ -152,7 +155,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <button type="submit" style="background-color: gray;" class="btn btn-dark">Asignar</button>
+                        <button type="submit" style="background-color: gray;" class="btn btn-dark">Crear</button>
                     </div>
 
                     <div class="col-md-6">
@@ -170,5 +173,9 @@
 
 
 <script type="text/javascript">
-    
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
 </script>
