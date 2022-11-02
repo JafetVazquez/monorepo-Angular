@@ -43,6 +43,7 @@ export class TicketsService {
     return this.http.delete<Tickets>(this.apiURL + '/tickets' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
+
   handleError(error: any){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){

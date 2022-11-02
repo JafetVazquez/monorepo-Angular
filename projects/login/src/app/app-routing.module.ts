@@ -23,6 +23,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { User2Component } from './user2/user2.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { SpaCrudComponent } from './spa-crud/spa-crud.component';
+import { DetailsComponent } from './spa-crud/details/details.component';
+import { CreateComponent } from './spa-crud/create/create.component';
+import { UpdateComponent } from './spa-crud/update/update.component';
 
 const routes: Routes = [
   {
@@ -110,7 +114,25 @@ const routes: Routes = [
 
   {
     path: 'crud',
-    component: AddEmployeeComponent,
+    component: SpaCrudComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'crud/details',
+    component: DetailsComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'crud/create',
+    component: CreateComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'crud/update/:id',
+    component: UpdateComponent,
     pathMatch: 'full'
   },
 

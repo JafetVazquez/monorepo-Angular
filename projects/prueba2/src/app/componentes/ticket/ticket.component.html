@@ -83,6 +83,8 @@
                     <div class="col-md-6">
                         <label for="inputAddress" class="form-label">Estado</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketModel.ticket_tipopstatus" value="Ligado" name="estado">
+
+                        <input type="text" class="form-control" id="inputAddress" placeholder="fecha" disabled [(ngModel)]="ticketModel.fecha_creacion" value="{{todayWithPipe}}" name="fechacreacion">
                     </div>
 
                     <div class="col-md-6">

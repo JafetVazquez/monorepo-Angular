@@ -41,6 +41,10 @@ import { PerfilComponent } from './reg_log/perfil/perfil.component';
 import { RegistorComponent } from './reg_log/registor/registor.component';
 import { User2Component } from './user2/user2.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { SpaCrudComponent } from './spa-crud/spa-crud.component';
+import { DetailsComponent } from './spa-crud/details/details.component';
+import { CreateComponent } from './spa-crud/create/create.component';
+import { UpdateComponent } from './spa-crud/update/update.component';
 
 export function initializeApp1(appInitService: AppInitService){
   return(): Promise<any> => {
@@ -79,7 +83,11 @@ export function initializeApp1(appInitService: AppInitService){
     PerfilComponent,
     RegistorComponent,
     User2Component,
-    UserEditComponent
+    UserEditComponent,
+    SpaCrudComponent,
+    DetailsComponent,
+    CreateComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

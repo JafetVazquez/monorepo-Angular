@@ -65,5 +65,50 @@
       "ticket_proyecto": null,
       "ticket_areaorigen": null
     }
+  ],
+  "todos": [
+    {
+      "id": 1667271968438,
+      "title": "Some Todo"
+    },
+    {
+      "id": 1667271973299,
+      "title": "Some Todo"
+    },
+    {
+      "id": 1667271974256,
+      "title": "Some Todo"
+    },
+    {
+      "id": 1667272000672,
+      "title": "Some Todo"
+    },
+    {
+      "id": 1667279862078,
+      "title": "Some Todo"
+    }
+  ],
+  "products": [
+    {
+      "name": "Nehru",
+      "price": 979,
+      "description": "Adipisci doloremque",
+      "quantity": 9,
+      "id": 2
+    },
+    {
+      "name": "Amela",
+      "price": 485,
+      "description": "Deserunt",
+      "quantity": 468,
+      "id": 6
+    },
+    {
+      "name": "Mayo",
+      "price": 164,
+      "description": "Quia duis",
+      "quantity": 289,
+      "id": 8
+    }
   ]
 }

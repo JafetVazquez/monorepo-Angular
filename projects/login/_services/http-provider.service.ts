@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { MiniCRUDService } from "./mini-crud.service";
 
-var apiUrl = "http://localhost:8100/";
+var apiUrl = "http://localhost:3000/";
 
 var httpLink = {
   getAllEmployee: apiUrl + "/api/employee/getAllEmployee",
