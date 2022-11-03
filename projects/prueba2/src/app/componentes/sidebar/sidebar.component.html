@@ -4,29 +4,38 @@
     data-bs-toggle="offcanvas" 
     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
     style="float: right ">
-
    </button>
 </div> 
-    <div class="offcanvas offcanvas-end w-auto" 
-   tabindex="-1" 
-   id="offcanvasRight" 
-   aria-labelledby="offcanvasRightLabel">
-     <div class="offcanvas-header">
-       <h5 id="offcanvasRightLabel"></h5>
-       <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas" aria-label="Close" ></button>
-     </div> 
-     
-     <div class="offcanvas-body " style="float: right" >
-
-      <div class="dropdown mt-3" >
-         <button class="btn bi bi-person-fill dropdown-toggle" type="button" 
-         id="dropdownMenuButton" 
-         data-bs-toggle="dropdown"
-         id="icon"> 
-         </button>
-         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-           <li><a class="dropdown-item" routerLink="/perfil">Mi perfil</a></li>
-           <li><a class="dropdown-item" routerLink="/cerrar_sesion">Cerrar sesión</a></li>
-         </ul>
-       </div>    
-
+<div class="offcanvas offcanvas-end w-auto" 
+  tabindex="-1" 
+  id="offcanvasRight" 
+  aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel"></h5>
+     <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas" aria-label="Close" ></button>
+  </div>      
+  <div class="offcanvas-body " style="float: right" >
+  <div class="dropdown mt-3" >
+   <button class="btn bi bi-person-fill dropdown-toggle" type="button" 
+     id="dropdownMenuButton" 
+     data-bs-toggle="dropdown"
+     id="icon"> 
+  </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <li><a class="dropdown-item" routerLink="/perfil">Mi perfil</a></li>
+     <li><a class="dropdown-item" routerLink="/cerrar_sesion">Cerrar sesión</a></li>
+     </ul>
+     <ul class="nav nav-pills flex-column mb-auto" id="icon">
+     <li>
+      <a routerLink="/ticket" class="nav-link link-dark bi-bell-fill"> 
+      </a>
+      </li><br><br><br><br><br><br><br><br><br><br>
+      <li>
+        <a routerLink="/" class="nav-link link-dark bi-envelope-fill"></a>
+      </li>
+      <li>
+        <a routerLink="/" class="nav-link link-dark bi-plus-circle-fill"></a>
+      </li>
+      </ul>  
+  </div>    
+</div>
