@@ -18,6 +18,7 @@ import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { Sidebar2Component } from './componentes/sidebar2/sidebar2.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { EditTicketComponent } from './componentes/edit-ticket/edit-ticket.component';
+import { TicketGestorComponent } from './componentes/ticket-gestor/ticket-gestor.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditTicketComponent } from './componentes/edit-ticket/edit-ticket.compo
     SidebarComponent,
     Sidebar2Component,
     DashboardComponent,
-    EditTicketComponent
+    EditTicketComponent,
+    TicketGestorComponent
   ],
   imports: [
     BrowserModule,
