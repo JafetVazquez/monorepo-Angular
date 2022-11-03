@@ -90,13 +90,6 @@
   ],
   "products": [
     {
-      "name": "Nehru",
-      "price": 979,
-      "description": "Adipisci doloremque",
-      "quantity": 9,
-      "id": 2
-    },
-    {
       "name": "Amela",
       "price": 485,
       "description": "Deserunt",
@@ -109,6 +102,34 @@
       "description": "Quia duis",
       "quantity": 289,
       "id": 8
+    },
+    {
+      "name": "Tallulah",
+      "price": 841,
+      "description": "Et officia molestias",
+      "quantity": 24,
+      "id": 9
+    },
+    {
+      "name": "Bass",
+      "price": 119,
+      "description": "Qui irure occaecat",
+      "quantity": 470,
+      "id": 10
+    },
+    {
+      "name": "wilson",
+      "price": 88,
+      "description": "Dolor vel velit fuga",
+      "quantity": 968,
+      "id": 11
+    },
+    {
+      "name": "Chandler",
+      "price": 117,
+      "description": "Minim veniam",
+      "quantity": 125,
+      "id": 12
     }
   ]
 }
