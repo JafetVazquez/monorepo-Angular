@@ -19,6 +19,7 @@ import { Sidebar2Component } from './componentes/sidebar2/sidebar2.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { EditTicketComponent } from './componentes/edit-ticket/edit-ticket.component';
 import { TicketGestorComponent } from './componentes/ticket-gestor/ticket-gestor.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TicketGestorComponent } from './componentes/ticket-gestor/ticket-gestor
     Sidebar2Component,
     DashboardComponent,
     EditTicketComponent,
-    TicketGestorComponent
+    TicketGestorComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,

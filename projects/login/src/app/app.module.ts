@@ -45,6 +45,10 @@ import { SpaCrudComponent } from './spa-crud/spa-crud.component';
 import { DetailsComponent } from './spa-crud/details/details.component';
 import { CreateComponent } from './spa-crud/create/create.component';
 import { UpdateComponent } from './spa-crud/update/update.component';
+import { DatatableExampleComponent } from './datatable-example/datatable-example.component';
+import { DataTablesModule } from 'angular-datatables';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+
 
 export function initializeApp1(appInitService: AppInitService){
   return(): Promise<any> => {
@@ -87,7 +91,9 @@ export function initializeApp1(appInitService: AppInitService){
     SpaCrudComponent,
     DetailsComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    DatatableExampleComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +101,7 @@ export function initializeApp1(appInitService: AppInitService){
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    DataTablesModule,
     NgxPermissionsModule.forRoot()
   ],
   providers: [authInterceptorProviders, EmployeesService, PostsComponent, AppInitService, { provide: APP_INITIALIZER, useFactory: initializeApp1, deps: [AppInitService], multi: true }],

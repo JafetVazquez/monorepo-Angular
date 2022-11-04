@@ -12,6 +12,7 @@ import { SidebarComponent } from "./componentes/sidebar/sidebar.component";
 import { Sidebar2Component } from "./componentes/sidebar2/sidebar2.component";
 import { DashboardComponent } from "./componentes/dashboard/dashboard.component";
 import { EditTicketComponent } from "./componentes/edit-ticket/edit-ticket.component";
+import { ProyectosComponent } from "./componentes/proyectos/proyectos.component";
 
 
 
@@ -55,6 +56,10 @@ const routes: Routes = [
     {
         path:'ticket/tickets/edit/:id',
         component: EditTicketComponent
+    },
+    {
+        path:'proyectos',
+        component: ProyectosComponent
     },
     {
         path:'sidebar',

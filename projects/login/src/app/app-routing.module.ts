@@ -27,6 +27,7 @@ import { SpaCrudComponent } from './spa-crud/spa-crud.component';
 import { DetailsComponent } from './spa-crud/details/details.component';
 import { CreateComponent } from './spa-crud/create/create.component';
 import { UpdateComponent } from './spa-crud/update/update.component';
+import { DatatableExampleComponent } from './datatable-example/datatable-example.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,12 @@ const routes: Routes = [
   {
     path: 'todos',
     component: BoardUser2Component,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'datatable',
+    component: DatatableExampleComponent,
     pathMatch: 'full'
   },
 
