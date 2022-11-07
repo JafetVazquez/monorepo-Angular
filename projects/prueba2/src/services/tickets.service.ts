@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Tickets } from "../assets/tickets";
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from "rxjs/operators";
+import { ActivatedRoute, Router } from "@angular/router";
+import { ProjectsService } from "./projects.service";
+import { ProyectosComponent } from "../app/componentes/proyectos/proyectos.component";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +13,10 @@ import { retry, catchError } from "rxjs/operators";
 export class TicketsService {
 
   apiURL = 'http://localhost:3000';
+  idProject = this.activatedRoute.snapshot.params['id']
+  tickets: any = {};
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -26,28 +31,38 @@ export class TicketsService {
     })
   };
 
+  // get Tickets
   getTickets(): Observable<Tickets>{
 
     return this.http.get<Tickets>(this.apiURL + '/tickets', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
+  // get tickets by id
   getTicketById(id: any): Observable<Tickets>{
     return this.http.get<Tickets>(this.apiURL + '/tickets/' + id).pipe(retry(1), catchError(this.handleError));
   }
 
+  // get ticket from id projects
+  getTicketsByProject(idProject: any): Observable<Tickets>{
+    return this.http.get<Tickets>(this.apiURL + '/projects/' + idProject).pipe(retry(1), catchError(this.handleError));
+  }
+
+  // create Ticket
   createTicket(id: any): Observable<Tickets>{
     return this.http.post<Tickets>(this.apiURL + '/tickets', JSON.stringify(id), this.httpOptions).pipe(retry(1),catchError(this.handleError));
   }
 
+  // update Ticket
   updateTicket(id: any, data: any): Observable<Tickets>{
     return this.http.put<Tickets>(this.apiURL + '/tickets/' + id, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
+  // delete Ticket
   deleteTicket(id: any){
     return this.http.delete<Tickets>(this.apiURL + '/tickets/' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-
+  // handleError
   handleError(error: any){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){

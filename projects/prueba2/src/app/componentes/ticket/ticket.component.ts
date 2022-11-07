@@ -96,7 +96,7 @@ export class TicketComponent implements OnInit {
   ticketModel = new Tickets("", this.folio, "", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
   projects: any[] = [];
   // projects: any = {};
-  projectSelected = null;
+  projectSelected = '';
 
   constructor(private ticketsService: TicketsService, private router: Router, private projectsService: ProjectsService) { }
 

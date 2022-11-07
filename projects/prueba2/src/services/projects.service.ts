@@ -32,23 +32,23 @@ export class ProjectsService {
   }
 
   // get project by id
-  getProjectById(id: any): Observable<Projects>{
-    return this.http.get<Projects>(this.apiURL + '/proyectos/' + id).pipe(retry(1), catchError(this.handleError));
+  getProjectById(codigo: any): Observable<Projects>{
+    return this.http.get<Projects>(this.apiURL + '/proyectos/' + codigo).pipe(retry(1), catchError(this.handleError));
   }
 
   // create project
-  createProject(id: any): Observable<Projects>{
-    return this.http.post<Projects>(this.apiURL + '/proyectos', JSON.stringify(id), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  createProject(codigo: any): Observable<Projects>{
+    return this.http.post<Projects>(this.apiURL + '/proyectos', JSON.stringify(codigo), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   //update project
-  updateProject(id: any, data: any): Observable<Projects>{
-    return this.http.put<Projects>(this.apiURL + '/proyectos/' + id, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  updateProject(codigo: any, data: any): Observable<Projects>{
+    return this.http.put<Projects>(this.apiURL + '/proyectos/' + codigo, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // delete project
-  deleteProject(id: any): Observable<Projects>{
-    return this.http.delete<Projects>(this.apiURL + '/proyectos/' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  deleteProject(codigo: any): Observable<Projects>{
+    return this.http.delete<Projects>(this.apiURL + '/proyectos/' + codigo, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // handleError

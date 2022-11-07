@@ -10,8 +10,8 @@ import { Projects } from "../../../assets/projects";
 })
 export class ProyectosComponent implements OnInit {
 
-  id = this.activatedRoute.snapshot.params['id'];
-  folio: string = '';
+  codigo = this.activatedRoute.snapshot.params['codigo'];
+  folio!: string;
   // projectData: any = {};
   projectData: any[] = [];
 
@@ -19,6 +19,11 @@ export class ProyectosComponent implements OnInit {
     this.projectsService.getProjects().subscribe((data: any) => {
       this.projectData = data;
     });
+  }
+
+  // Ticket By project
+  ticketByProject(codigo: string){
+    this.router.navigate(['proyecto', codigo,'tickets'])
   }
 
   ngOnInit(): void {

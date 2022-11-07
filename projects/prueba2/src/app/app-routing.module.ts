@@ -13,6 +13,7 @@ import { Sidebar2Component } from "./componentes/sidebar2/sidebar2.component";
 import { DashboardComponent } from "./componentes/dashboard/dashboard.component";
 import { EditTicketComponent } from "./componentes/edit-ticket/edit-ticket.component";
 import { ProyectosComponent } from "./componentes/proyectos/proyectos.component";
+import { TicketGestorComponent } from "./componentes/ticket-gestor/ticket-gestor.component";
 
 
 
@@ -60,6 +61,10 @@ const routes: Routes = [
     {
         path:'proyectos',
         component: ProyectosComponent
+    },
+    {
+        path:'proyecto/:codigo/tickets',
+        component: TicketGestorComponent
     },
     {
         path:'sidebar',

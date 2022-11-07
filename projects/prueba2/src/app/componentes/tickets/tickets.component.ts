@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { DataTablesModule } from "angular-datatables";
-
+import { ActivatedRoute } from "@angular/router";
+import { TicketsService } from "../../../services/tickets.service";
 
 @Component({
   selector: 'app-tickets',
@@ -12,8 +13,18 @@ export class TicketsComponent implements OnInit {
 
   apiURL = 'http://localhost:3000/tickets'
   data: any;
+  idProject = this.activatedRoute.snapshot.params['idProject']
+  ticketsProject: any[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService) {
+
+    // get project id
+    // this.activatedRoute.params.subscribe((params => {
+    //   this.ticketsService.getTicketsByIdProjects(params.['idProject'], ['id']).subscribe((data: any) => {
+    //     this.ticketsProject = data;
+    //   })
+    // }))
+    
     this.http.get(this.apiURL).subscribe((data) => {
       this.data = data;      
 

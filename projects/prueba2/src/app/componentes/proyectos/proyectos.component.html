@@ -4,5 +4,5 @@
 <div class="cont" *ngFor="let proyecto of projectData"> <br>
     <h4>{{proyecto.nombre_proyecto}}</h4>
     <h6>Código de proyecto: <b>{{proyecto.codigo_proyecto}}</b></h6>
-    <button class="btn btn-link" routerLink="/ticket/tickets">Detalles...</button>
+    <button class="btn btn-link" routerLink="" (click)="ticketByProject(proyecto.nombre_proyecto)">Detalles...</button>
 </div>
