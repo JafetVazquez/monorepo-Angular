@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { TicketsService } from "../../../services/tickets.service";
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Tickets } from "../../../assets/tickets";
+import { Projects } from "../../../assets/projects";
+import { ProjectsService } from "../../../services/projects.service";
 
 // interface Tickets {
 //   id: string;
@@ -92,8 +94,11 @@ export class TicketComponent implements OnInit {
   pipe = new DatePipe('en-US');
   todayWithPipe: string | null | undefined = '';
   ticketModel = new Tickets("", this.folio, "", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
+  projects: any[] = [];
+  // projects: any = {};
+  projectSelected = null;
 
-  constructor(public ticketsService: TicketsService, public router: Router) { }
+  constructor(private ticketsService: TicketsService, private router: Router, private projectsService: ProjectsService) { }
 
   ngOnInit(): void {
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
@@ -105,7 +110,9 @@ export class TicketComponent implements OnInit {
     this.folio = new Date().getTime().toString();
     console.log(this.folio);
 
-    console.log(this.todayWithPipe);
+    console.log(this.todayWithPipe);    
+    
+    console.log(this.getProjects());
     
   }
 
@@ -127,6 +134,14 @@ export class TicketComponent implements OnInit {
       console.log("formulario enviado: ", this.ticketModel);
 
       this.router.navigate(['/ticket/tickets'])
+    })
+  }
+
+  // get project
+  getProjects(){
+    this.projectsService.getProjects().subscribe((data: any) => {
+      console.log(data);
+      this.projects = data;
     })
   }
 }

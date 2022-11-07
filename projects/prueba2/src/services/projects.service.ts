@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Tickets } from "../assets/tickets";
+import { Projects } from "../assets/projects";
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TicketsService {
+export class ProjectsService {
 
   apiURL = 'http://localhost:3000';
 
@@ -26,30 +26,35 @@ export class TicketsService {
     })
   };
 
-  getTickets(): Observable<Tickets>{
-
-    return this.http.get<Tickets>(this.apiURL + '/tickets', this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  // get all projects
+  getProjects(): Observable<Projects> {
+    return this.http.get<Projects>(this.apiURL + '/proyectos', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-  getTicketById(id: any): Observable<Tickets>{
-    return this.http.get<Tickets>(this.apiURL + '/tickets/' + id).pipe(retry(1), catchError(this.handleError));
+  // get project by id
+  getProjectById(id: any): Observable<Projects>{
+    return this.http.get<Projects>(this.apiURL + '/proyectos/' + id).pipe(retry(1), catchError(this.handleError));
   }
 
-  createTicket(id: any): Observable<Tickets>{
-    return this.http.post<Tickets>(this.apiURL + '/tickets', JSON.stringify(id), this.httpOptions).pipe(retry(1),catchError(this.handleError));
+  // create project
+  createProject(id: any): Observable<Projects>{
+    return this.http.post<Projects>(this.apiURL + '/proyectos', JSON.stringify(id), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-  updateTicket(id: any, data: any): Observable<Tickets>{
-    return this.http.put<Tickets>(this.apiURL + '/tickets/' + id, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  //update project
+  updateProject(id: any, data: any): Observable<Projects>{
+    return this.http.put<Projects>(this.apiURL + '/proyectos/' + id, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-  deleteTicket(id: any){
-    return this.http.delete<Tickets>(this.apiURL + '/tickets/' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  // delete project
+  deleteProject(id: any): Observable<Projects>{
+    return this.http.delete<Projects>(this.apiURL + '/proyectos/' + id, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
-
+  // handleError
   handleError(error: any){
     let errorMessage = '';
+
     if(error.error instanceof ErrorEvent){
       errorMessage = error.error.message;
     }else{
