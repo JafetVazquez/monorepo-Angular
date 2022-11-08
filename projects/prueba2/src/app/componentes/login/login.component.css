@@ -45,7 +45,7 @@ label{
 
 .btn-custom{
     color: var(--primary);
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
 }
 
 .form-control{

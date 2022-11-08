@@ -5,6 +5,7 @@
 
 ::-webkit-scrollbar{
     width: 6px;
+    height: auto;
 }
 ::-webkit-scrollbar-track{
     background: #ffffff;
