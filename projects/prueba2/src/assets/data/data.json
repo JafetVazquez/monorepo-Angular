@@ -175,5 +175,15 @@
       "fecha_actualizacion": "2022-11-21",
       "status_entidad": 1
     }
+  ],
+  "historial_ticket":[
+    {
+      "id":1,
+      "id_ticket":2,
+      "id_usuario":1,
+      "fc_modificacion":"2022-11-20",
+      "estatus_ant":"Creado",
+      "espec_ant":""
+    }
   ]
 }
