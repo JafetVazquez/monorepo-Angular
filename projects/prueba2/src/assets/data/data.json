@@ -176,17 +176,17 @@
       "status_entidad": 1
     }
   ],
-  "historial_ticket":[
+  "historial_ticket": [
     {
-      "id_historial_ticket":1,
-      "id_ticket":2,
-      "id_usuario":1,
-      "fc_modificacion":"2022-11-20",
-      "id_estatus":"Creado",
-      "id_especialista":""
+      "id_historial_ticket": 1,
+      "id_ticket": 2,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-20",
+      "id_estatus": "Creado",
+      "id_especialista": ""
     }
   ],
-  "comentarios":[
+  "comentarios": [
     {
       "id_comentario": 1,
       "contenido_comentario": "fjfhjjg",
