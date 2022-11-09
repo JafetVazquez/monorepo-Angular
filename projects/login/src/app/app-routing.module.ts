@@ -28,6 +28,7 @@ import { DetailsComponent } from './spa-crud/details/details.component';
 import { CreateComponent } from './spa-crud/create/create.component';
 import { UpdateComponent } from './spa-crud/update/update.component';
 import { DatatableExampleComponent } from './datatable-example/datatable-example.component';
+import { Login2Component } from './login2/login2.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,12 @@ const routes: Routes = [
   {
     path: 'datatable',
     component: DatatableExampleComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'login2',
+    component: Login2Component,
     pathMatch: 'full'
   },
 

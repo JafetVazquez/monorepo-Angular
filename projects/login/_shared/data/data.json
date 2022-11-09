@@ -131,5 +131,23 @@
       "quantity": 125,
       "id": 12
     }
+  ],
+  "signup": [
+    {
+      "id": 1,
+      "fname": "Manoj",
+      "lname": "Adhikari",
+      "email": "manojadhikari@gmail.com",
+      "phone": "234324234",
+      "password": "asdasdf"
+    },
+    {
+      "id": 2,
+      "fname": "shivam",
+      "lname": "adhikari",
+      "email": "shivamadhikari@gmail.com",
+      "phone": "32432",
+      "password": "asdf"
+    }
   ]
 }

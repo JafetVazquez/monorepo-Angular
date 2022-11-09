@@ -48,6 +48,7 @@ import { UpdateComponent } from './spa-crud/update/update.component';
 import { DatatableExampleComponent } from './datatable-example/datatable-example.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { Login2Component } from './login2/login2.component';
 
 
 export function initializeApp1(appInitService: AppInitService){
@@ -93,7 +94,8 @@ export function initializeApp1(appInitService: AppInitService){
     CreateComponent,
     UpdateComponent,
     DatatableExampleComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    Login2Component
   ],
   imports: [
     BrowserModule,
