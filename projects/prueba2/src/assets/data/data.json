@@ -185,5 +185,17 @@
       "id_estatus":"Creado",
       "id_especialista":""
     }
+  ],
+  "comentarios":[
+    {
+      "id_comentario": 1,
+      "contenido_comentario": "fjfhjjg",
+      "id_ticket": 5,
+      "comentario_usuario": "fhgghh",
+      "fecha_comentario": "2022-11-20",
+      "fecha_creacion": "2022-11-20",
+      "fecha_culminacion": "2022-11-20",
+      "estatus": 1
+    }
   ]
 }
