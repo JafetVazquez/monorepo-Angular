@@ -20,6 +20,7 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 import { EditTicketComponent } from './componentes/edit-ticket/edit-ticket.component';
 import { TicketGestorComponent } from './componentes/ticket-gestor/ticket-gestor.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { ProfileComponent } from './componentes/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     DashboardComponent,
     EditTicketComponent,
     TicketGestorComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

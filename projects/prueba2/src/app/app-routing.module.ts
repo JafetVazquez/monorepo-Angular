@@ -14,6 +14,8 @@ import { DashboardComponent } from "./componentes/dashboard/dashboard.component"
 import { EditTicketComponent } from "./componentes/edit-ticket/edit-ticket.component";
 import { ProyectosComponent } from "./componentes/proyectos/proyectos.component";
 import { TicketGestorComponent } from "./componentes/ticket-gestor/ticket-gestor.component";
+import { PerfilComponent } from "projects/login/src/app/reg_log/perfil/perfil.component";
+import { ProfileComponent } from "./componentes/profile/profile.component";
 
 
 
@@ -29,7 +31,12 @@ const routes: Routes = [
         path: 'recuperar-contrasena',
         component: RecuperarContrasenaComponent,
         pathMatch: 'full'
-    }, 
+    },
+    {
+        path: 'perfil',
+        component: ProfileComponent,
+        pathMatch: 'full'
+    },
     {
         path: 'registrar',
         component: RegistrarComponent

@@ -1,0 +1,98 @@
+<app-sidebar></app-sidebar>
+<app-sidebar2></app-sidebar2>
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+        
+  <title>Login</title>    
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+  
+  <!-- Link hacia el archivo de estilos css -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+ 
+  
+  <style type="text/css">
+      
+  </style>
+  
+  <script type="text/javascript">
+  
+  </script>
+</head>
+  
+<body>
+
+    <h3 class="text-center pt-3">PERFIL</h3>
+  
+    <div class="cont">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3"></div>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            
+
+                
+                <br>
+                <br>                
+                <form class="login-form row g-3" method="post" action="#" >
+
+                    <div class="col-md-12">
+                        <label for="inputEmail4" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" [(ngModel)]="perfilData.nombre" id="inputEmail4" name="titulo" required disabled>
+
+                        <label for="inputEmail4" class="form-label">Profesión</label>
+                        <input type="text" class="form-control" [(ngModel)]="perfilData.rol" id="inputEmail4" name="rol" required disabled>
+
+                        <label for="inputEmail4" class="form-label">Correo electrónico</label>
+                        <input type="text" class="form-control" [(ngModel)]="perfilData.correo" id="inputEmail4" name="usuario" required disabled>
+
+                        <label for="inputEmail4" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" value="**********" id="inputEmail4" name="password" required disabled>
+                    </div>
+                    
+
+                    <!-- <div class="col-12">
+                        <button class="btn btn-link" routerLink="/ticket/tickets">Tickets</button>
+                        <br>
+                        <br>
+                    </div> -->
+
+                    
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <button type="submit" style="background-color: gray;" class="btn btn-dark">Asignar</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <button type="button" style="background-color: gray;"  class="btn btn-dark" routerLink="/ticket/tickets">Cancelar</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-3"></div>
+            </div>
+        </div>
+    
+</body>
+</html>
