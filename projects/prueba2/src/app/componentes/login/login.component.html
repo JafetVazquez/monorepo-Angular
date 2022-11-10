@@ -40,20 +40,26 @@
             <i class="fa fa-i-cursor"></i>
             <h5 class="text-center pt-3">Facilita la vida de tus agentes</h5>
             <h3 class="text-center pt-3">HELPDESK</h3>
-            <form class="login-form" action="#">
+
+            <form [formGroup]="login" (ngSubmit)="loginData(login)" class="login-form" action="#">
+
               <div class="mb-3 bg-color">
                 <label>Usuario</label>
-                <input type="email" [ngModel]="email" name="email" class="form-control" required>
+                <input type="email" formControlName="correo" name="email" class="form-control" required>
               </div>
+
               <div class="mb-3 bg-color">
                 <label>Contraseña</label>
-                <input type="password" [ngModel]="password" name="password" class="form-control" required>
+                <input type="password" formControlName="password" name="password" class="form-control" required>
               </div>
-              <button (click)="login()" routerLink="/ticket" type="submit" class="btn btn-dark btn-block mt-3 d-grid gap-2 mx-auto" >Iniciar sesión</button>
+
+              <button type="submit" class="btn btn-dark btn-block mt-3 d-grid gap-2 mx-auto" >Iniciar sesión</button>
+
               <div class="text-center pt-3 pb-3">
                 <a routerLink="/recuperar-contrasena" class="a">Recuperar contraseña</a>.     
                 <a routerLink="/registrar" class="a">Crear cuenta</a>
               </div>
+
             </form>
           </div>
           <div class="col-md-3"></div>

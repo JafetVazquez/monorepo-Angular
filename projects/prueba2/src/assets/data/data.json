@@ -136,6 +136,29 @@
       "ticket_tipopstatus": "Creado",
       "ticket_proyecto": "AMD",
       "ticket_areaorigen": ""
+    },
+    {
+      "id": 7,
+      "folio": "",
+      "titulo": "nixim@mailinator.com",
+      "coordenadas": "",
+      "evidencias": "",
+      "descripcion": "Repudiandae sit exc",
+      "comentario_t": "",
+      "fecha_creacion": "",
+      "fecha_atendido": "",
+      "fecha_asignado": "2022-11-10",
+      "fecha_proceso": "",
+      "fecha_resuelto": "",
+      "fecha_validado": "",
+      "fecha_cancelado": "",
+      "ticket_superior": "",
+      "ticket_usariocreador": "fofyco@mailinator.com",
+      "ticket_especialistaasignado": "Panchito Pérez",
+      "ticket_tipoprioridad": "Alta",
+      "ticket_tipopstatus": "Asignado",
+      "ticket_proyecto": "AMD",
+      "ticket_areaorigen": ""
     }
   ],
   "users": [
@@ -150,6 +173,18 @@
       "fc_culm": null,
       "rol": "gestor",
       "proyecto": "IPN"
+    },
+    {
+      "id": 2,
+      "nombre": "Jafet",
+      "apellidos": "Vazquez",
+      "correo": "jetvax.jv@gmail.com",
+      "password": "123",
+      "codigo": null,
+      "fc_crea": null,
+      "fc_culm": null,
+      "rol": "Especialista",
+      "proyecto": null
     }
   ],
   "proyectos": [
