@@ -29,6 +29,7 @@ import { CreateComponent } from './spa-crud/create/create.component';
 import { UpdateComponent } from './spa-crud/update/update.component';
 import { DatatableExampleComponent } from './datatable-example/datatable-example.component';
 import { Login2Component } from './login2/login2.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,12 @@ const routes: Routes = [
   {
     path: 'todos',
     component: BoardUser2Component,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'angular-datatable',
+    component: ProyectosComponent,
     pathMatch: 'full'
   },
 
