@@ -4,6 +4,10 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppInitService } from "./app-init.service";
+import { MatTableModule } from "@angular/material/table";
+import {  MatPaginatorModule } from "@angular/material/paginator";
+import { MatSort, MatSortModule } from "@angular/material/sort";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -104,6 +108,9 @@ export function initializeApp1(appInitService: AppInitService){
     HttpClientModule,
     ReactiveFormsModule,
     DataTablesModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     NgxPermissionsModule.forRoot()
   ],
   providers: [authInterceptorProviders, EmployeesService, PostsComponent, AppInitService, { provide: APP_INITIALIZER, useFactory: initializeApp1, deps: [AppInitService], multi: true }],
