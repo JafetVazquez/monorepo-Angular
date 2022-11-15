@@ -58,7 +58,7 @@ const routes: Routes = [
         component: HistorialComponent
     },
     {
-        path:'ticket/tickets',
+        path:'tickets',
         component: TicketsComponent
     },
     {

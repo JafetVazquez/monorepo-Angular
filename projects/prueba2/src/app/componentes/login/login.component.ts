@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       }
     }, err => {
       // alert('algo salió mal!')
-      this.msgAlert('success', '¡Algo salió mal!');
+      this.msgAlert('error', '¡Algo salió mal!');
     })
   }
   
