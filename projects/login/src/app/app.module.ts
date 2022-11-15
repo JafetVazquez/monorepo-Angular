@@ -7,11 +7,16 @@ import { AppInitService } from "./app-init.service";
 import { MatTableModule } from "@angular/material/table";
 import {  MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 const materialModules = [
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatFormFieldModule,
+  MatInputModule
 ]
 
 import { AppRoutingModule } from './app-routing.module';
@@ -113,6 +118,7 @@ export function initializeApp1(appInitService: AppInitService){
     HttpClientModule,
     ReactiveFormsModule,
     DataTablesModule,
+    FlexLayoutModule,
     ...materialModules,
     NgxPermissionsModule.forRoot()
   ],
