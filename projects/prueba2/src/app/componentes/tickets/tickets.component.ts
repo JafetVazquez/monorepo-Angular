@@ -1,8 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { DataTablesModule } from "angular-datatables";
 import { ActivatedRoute } from "@angular/router";
 import { TicketsService } from "../../../services/tickets.service";
+
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+import { MatTableDataSource } from "@angular/material/table";
+import { ChangeDetectorRef } from "@angular/core";
+import { Tickets } from 'projects/prueba2/src/assets/tickets';
 
 @Component({
   selector: 'app-tickets',
@@ -11,46 +17,32 @@ import { TicketsService } from "../../../services/tickets.service";
 })
 export class TicketsComponent implements OnInit {
 
-  apiURL = 'http://localhost:3000/tickets'
+  apiURL = 'http://localhost:3000/tickets';
+
+  displayedColumns: string[] = ['Folio', 'Título', 'Operador', 'Fecha', 'Estatus', 'Prioridad'];
+
+  dataToDisplay: any = [];
   data: any;
+  showData: boolean = false;
   idProject = this.activatedRoute.snapshot.params['idProject']
   ticketsProject: any[] = [];
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService) {
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
-    // get project id
-    // this.activatedRoute.params.subscribe((params => {
-    //   this.ticketsService.getTicketsByIdProjects(params.['idProject'], ['id']).subscribe((data: any) => {
-    //     this.ticketsProject = data;
-    //   })
-    // }))
-    
-    this.http.get(this.apiURL).subscribe((data) => {
-      this.data = data;      
+  @ViewChild(MatSort, {static: true}) sort!: MatSort;
 
-      setTimeout(()=>{
-        $('#datatableExample').DataTable({
-          pagingType: 'simple_numbers',
-          pageLength: 5,
-          processing: true,
-          lengthMenu: [5, 10, 25],
-          language:{url:'//cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json'},
-          "dom": 'fltip',
-        });
-      }, 1);
-
-      
-    });
-  }
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    $('.dateadded').on( 'change', function (ret :any) {
- 
-      var v = ret.target.value  // getting search input value
-      
-      $('#dataTables-example').DataTable().columns(3).search(v).draw();
-  } );
+    this.ticketsService.getTickets().subscribe((data) => {
+      this.data = new MatTableDataSource<Tickets>(data);
 
+      this.data.paginator = this.paginator;
+      this.data.sort = this.sort;
+    })
   }
 
+  doFilter(value: any) {
+    this.data.filter = value.trim().toLocaleLowerCase();
+  }
 }

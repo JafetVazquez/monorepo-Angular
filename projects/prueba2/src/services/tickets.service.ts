@@ -32,9 +32,9 @@ export class TicketsService {
   };
 
   // get Tickets
-  getTickets(): Observable<Tickets>{
+  getTickets(): Observable<Tickets[]>{
 
-    return this.http.get<Tickets>(this.apiURL + '/tickets', this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Tickets[]>(this.apiURL + '/tickets', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // get tickets by id

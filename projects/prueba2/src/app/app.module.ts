@@ -22,6 +22,21 @@ import { TicketGestorComponent } from './componentes/ticket-gestor/ticket-gestor
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
 
+import { MatTableModule } from "@angular/material/table";
+import {  MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+const materialModules = [
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatFormFieldModule,
+  MatInputModule
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +61,12 @@ import { ProfileComponent } from './componentes/profile/profile.component';
     FormsModule,
     HttpClientModule,
     DataTablesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ...materialModules,
+    FlexLayoutModule
+  ],
+  exports:[
+    ...materialModules
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

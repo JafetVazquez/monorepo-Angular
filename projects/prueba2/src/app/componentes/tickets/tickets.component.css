@@ -1,3 +1,6 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
 elemento{
     --primary: #017999;
     --secondary: #6EB8CC;
@@ -123,4 +126,12 @@ textarea{
 }
 .table{
     cursor: pointer;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted{
+  color: black;
 }
