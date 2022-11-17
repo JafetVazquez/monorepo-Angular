@@ -31,23 +31,6 @@ export class TicketGestorComponent implements OnInit, OnDestroy {
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService) {
     this.ticketsService
-
-    this.http.get(this.apiURL + '?ticket_proyecto=' + this.codigoProject).subscribe((data) => {
-      this.data = data;         
-
-      setTimeout(()=>{
-        $('#datatableExample').DataTable({
-          pagingType: 'simple_numbers',
-          pageLength: 5,
-          processing: true,
-          lengthMenu: [5, 10, 25],
-          language:{url:'//cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json'},
-          "dom": 'fltip',
-        });
-      }, 1);
-
-      
-    });
   }
 
   ngOnInit(): void {
@@ -65,7 +48,7 @@ export class TicketGestorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    
+
   }
 
 }
