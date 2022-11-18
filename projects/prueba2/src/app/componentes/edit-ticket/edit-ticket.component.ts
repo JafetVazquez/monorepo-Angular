@@ -95,7 +95,7 @@ export class EditTicketComponent implements OnInit {
     if(window.confirm('¿Deseas actualizar este ticket?')){
       this.ticketsService.updateTicket(this.id, this.ticketData).subscribe((data) => {
         this.msgAlert('success', 'Ticket actualizado!')
-        this.router.navigateByUrl('/ticket/tickets')
+        this.router.navigateByUrl('/tickets')
       })
     }
   }

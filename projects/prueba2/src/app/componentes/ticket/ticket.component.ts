@@ -133,7 +133,7 @@ export class TicketComponent implements OnInit {
     this.ticketsService.createTicket(this.ticketModel).subscribe((data: {}) => {
       console.log("formulario enviado: ", this.ticketModel);
 
-      this.router.navigate(['/ticket/tickets'])
+      this.router.navigate(['/tickets'])
     })
   }
 

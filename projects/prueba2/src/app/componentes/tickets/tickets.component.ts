@@ -27,6 +27,10 @@ export class TicketsComponent implements OnInit {
   idProject = this.activatedRoute.snapshot.params['idProject']
   ticketsProject: any[] = [];
 
+  actorPanelOpenState = false;
+
+  actors: string[] = ['bradley cooper', 'jennifer lawrance','penelope cruz','javier bardem','winona ryder'];
+
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   @ViewChild(MatSort, {static: true}) sort!: MatSort;

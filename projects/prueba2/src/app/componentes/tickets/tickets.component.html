@@ -68,7 +68,31 @@
 
             </mat-form-field>
 
-            
+            <mat-expansion-panel (opened)="actorPanelOpenState = true" (closed)="actorPanelOpenState = false" [ngClass]="actorsList.selectedOptions.selected.length > 0 ? 'active-filter-width': 'no-filter-width'">
+                <mat-expansion-panel-header [ngClass]="{'active-filter-bg': actorsList.selectedOptions.selected.length > 0}">
+                    <mat-panel-title [ngClass]="{'active-filter-text': actorsList.selectedOptions.selected.length > 0}">
+                        Actor Principal
+                    </mat-panel-title>
+
+                    <mat-panel-description [ngClass]="{'active-filter-text': actorsList.selectedOptions.selected.length > 0}">
+                        {{actorsList.selectedOptions.selected[0]?.value}}, {{actorsList.selectedOptions.selected[1]?.value}}
+                    </mat-panel-description>
+
+                    <span *ngIf="actorsList.selectedOptions.selected.length > 2">
+                        +{{actorsList.selectedOptions.selected.length - 2}}
+                    </span>
+
+                </mat-expansion-panel-header>
+
+                <mat-selection-list #actorsList>
+                    <mat-list-option *ngFor="let actor of actors" [value]="actor">
+                        {{actor}}
+                    </mat-list-option>
+
+                    <p>{{actorsList.selectedOptions.selected.length}}</p>
+                </mat-selection-list>
+
+            </mat-expansion-panel>
 
         </div>
         <br>
@@ -112,7 +136,8 @@
 
         </table>
 
-        <mat-paginator  [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons=""></mat-paginator>
+        <mat-paginator [pageIndex]="0"
+        [pageSize]="5" showFirstLastButtons=""></mat-paginator>
 
     </div>
 
