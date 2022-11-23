@@ -182,6 +182,29 @@
       "ticket_tipopstatus": "Validado",
       "ticket_proyecto": "AMD",
       "ticket_areaorigen": ""
+    },
+    {
+      "id": 12,
+      "folio": "",
+      "titulo": "",
+      "coordenadas": "",
+      "evidencias": "",
+      "descripcion": "",
+      "comentario_t": "",
+      "fecha_creacion": "",
+      "fecha_atendido": "",
+      "fecha_asignado": "",
+      "fecha_proceso": "",
+      "fecha_resuelto": "",
+      "fecha_validado": "",
+      "fecha_cancelado": "",
+      "ticket_superior": "",
+      "ticket_usariocreador": "",
+      "ticket_especialistaasignado": "",
+      "ticket_tipoprioridad": "",
+      "ticket_tipopstatus": "",
+      "ticket_proyecto": "",
+      "ticket_areaorigen": ""
     }
   ],
   "users": [
@@ -241,6 +264,30 @@
       "id_usuario": 1,
       "fc_modificacion": "2022-11-20",
       "id_estatus": "Creado",
+      "id_especialista": ""
+    },
+    {
+      "id_historial_ticket": 2,
+      "id_ticket": 2,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-21",
+      "id_estatus": "Asignado",
+      "id_especialista": ""
+    },
+    {
+      "id_historial_ticket": 3,
+      "id_ticket": 2,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-22",
+      "id_estatus": "Resuelto",
+      "id_especialista": ""
+    },
+    {
+      "id_historial_ticket": 3,
+      "id_ticket": 3,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-22",
+      "id_estatus": "Resuelto",
       "id_especialista": ""
     }
   ],
