@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { DataTablesModule } from "angular-datatables";
 import { ActivatedRoute } from "@angular/router";
 import { TicketsService } from "../../../services/tickets.service";
+import { ProjectsService } from "../../../services/projects.service";
 
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
@@ -29,13 +30,17 @@ export class TicketsComponent implements OnInit {
 
   actorPanelOpenState = false;
 
-  actors: string[] = ['bradley cooper', 'jennifer lawrance','penelope cruz','javier bardem','winona ryder'];
+  projects: any[] = [];
+  project: any;
+
+  selectedProjects: string[] = [];
+  // actors: string[] = ['bradley cooper', 'jennifer lawrance','penelope cruz','javier bardem','winona ryder'];
 
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef) {}
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef, private projectService: ProjectsService) {}
 
   ngOnInit(): void {
     this.ticketsService.getTickets().subscribe((data) => {
@@ -43,7 +48,16 @@ export class TicketsComponent implements OnInit {
 
       this.data.paginator = this.paginator;
       this.data.sort = this.sort;
+      
     })
+
+    this.projectService.getProjects().subscribe((data: any) => {
+      this.projects = data;      
+    })
+  }
+
+  onGroupsChange(selectedPizzas: string[]) {
+    console.log(selectedPizzas);
   }
 
   doFilter(value: any) {
