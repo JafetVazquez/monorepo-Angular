@@ -291,16 +291,36 @@
       "id_especialista": ""
     }
   ],
-  "comentarios": [
+  "Comments": [
     {
-      "id_comentario": 1,
-      "contenido_comentario": "fjfhjjg",
-      "id_ticket": 5,
-      "comentario_usuario": "fhgghh",
+      "id": 1,
+      "contenido_comentario": "dsada",
+      "id_ticket": 3,
+      "comentario_usuario": "jsdam",
       "fecha_comentario": "2022-11-20",
       "fecha_creacion": "2022-11-20",
       "fecha_culminacion": "2022-11-20",
       "estatus": 1
-    }
+    },
+    {
+      "id": 7,
+      "contenido_comentario": "Facilis cumque asper",
+      "id_ticket": 3,
+      "comentario_usuario": "Minima non amet ab ",
+      "fecha_comentario": "1999-05-19",
+      "fecha_creacion": "1983-04-19",
+      "fecha_culminacion": "1986-10-01",
+      "estatus": ""
+    },
+    {
+      "id": 8,
+      "contenido_comentario": "Illo nostrud proiden",
+      "id_ticket": "3",
+      "comentario_usuario": "Suscipit rerum labor",
+      "fecha_comentario": "1982-09-13",
+      "fecha_creacion": "2009-11-06",
+      "fecha_culminacion": "1972-03-18",
+      "estatus": ""
+    } 
   ]
 }
