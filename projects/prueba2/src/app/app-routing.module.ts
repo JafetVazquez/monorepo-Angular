@@ -54,7 +54,7 @@ const routes: Routes = [
         component: CommentsComponent
     },
     {
-        path:'ticket/historial',
+        path:'ticket/historial/:id',
         component: HistorialComponent
     },
     {

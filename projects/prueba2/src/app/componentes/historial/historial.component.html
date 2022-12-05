@@ -5,17 +5,20 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
+                
                 <h1>HISTORIAL <h6>ticket: CO90922A1</h6></h1>
 
-                <ul class="timeline">
+                <div></div>
+
+                <ul class="timeline" *ngFor="let historial of historialTicket">
                     <li>
-                        <h6 class="float-right">Creado - Octubre 21, 2022 - 13:45:02</h6>
-                        <p>ticket creado por <a class="float-right" style="cursor: pointer;" (click)="perfil()">@usuario1</a></p>
+                        <h6 class="float-right">{{historial.id_estatus}} - {{historial.fc_modificacion}}- </h6>
+                        <p>ticket creado por <a class="float-right" style="cursor: pointer;" (click)="perfil()">id-usuario:{{historial.id_usuario}} @usuario1</a></p>
                     </li>
-                    <li>
+                    <!-- <li>
                         <h6 class="float-right">Asignado - Octubre 21, 2022 - 14:04:23</h6>
                         <p>ticket asignado a <a class="float-right" style="cursor: pointer;" (click)="perfil()">@especialista1</a></p>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

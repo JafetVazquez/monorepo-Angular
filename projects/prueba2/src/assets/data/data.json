@@ -136,6 +136,29 @@
       "ticket_tipopstatus": "En proceso",
       "ticket_proyecto": "",
       "ticket_areaorigen": ""
+    },
+    {
+      "id": 12,
+      "folio": "",
+      "titulo": "",
+      "coordenadas": "",
+      "evidencias": "",
+      "descripcion": "",
+      "comentario_t": "",
+      "fecha_creacion": "",
+      "fecha_atendido": "",
+      "fecha_asignado": "",
+      "fecha_proceso": "",
+      "fecha_resuelto": "",
+      "fecha_validado": "",
+      "fecha_cancelado": "",
+      "ticket_superior": "",
+      "ticket_usariocreador": "",
+      "ticket_especialistaasignado": "",
+      "ticket_tipoprioridad": "",
+      "ticket_tipopstatus": "",
+      "ticket_proyecto": "",
+      "ticket_areaorigen": ""
     }
   ],
   "users": [
@@ -208,28 +231,30 @@
       "fc_modificacion": "2022-11-20",
       "id_estatus": "Creado",
       "id_especialista": ""
-    }
-  ],
-  "comentarios": [
-    {
-      "id_comentario": 1,
-      "contenido_comentario": "fjfhjjg",
-      "id_ticket": 5,
-      "comentario_usuario": "fhgghh",
-      "fecha_comentario": "2022-11-20",
-      "fecha_creacion": "2022-11-20",
-      "fecha_culminacion": "2022-11-20",
-      "estatus": 1
     },
     {
-      "id_comentario": 2,
-      "contenido_comentario": "dsada",
-      "id_ticket": 5,
-      "comentario_usuario": "jsdam",
-      "fecha_comentario": "2022-11-20",
-      "fecha_creacion": "2022-11-20",
-      "fecha_culminacion": "2022-11-20",
-      "estatus": 1
+      "id_historial_ticket": 2,
+      "id_ticket": 2,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-21",
+      "id_estatus": "Asignado",
+      "id_especialista": ""
+    },
+    {
+      "id_historial_ticket": 3,
+      "id_ticket": 2,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-22",
+      "id_estatus": "Resuelto",
+      "id_especialista": ""
+    },
+    {
+      "id_historial_ticket": 3,
+      "id_ticket": 3,
+      "id_usuario": 1,
+      "fc_modificacion": "2022-11-22",
+      "id_estatus": "Resuelto",
+      "id_especialista": ""
     }
   ],
   "Comments": [
