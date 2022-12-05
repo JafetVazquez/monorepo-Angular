@@ -6,13 +6,16 @@ import { retry, catchError } from "rxjs/operators";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProjectsService } from "./projects.service";
 import { ProyectosComponent } from "../app/componentes/proyectos/proyectos.component";
+import { environment } from "../environments/environment";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketsService {
 
-  apiURL = 'http://localhost:3000';
+  // apiURL = 'http://localhost:3000';
+  apiURL = environment.apiUrl
   idProject = this.activatedRoute.snapshot.params['id']
   tickets: any = {};
 

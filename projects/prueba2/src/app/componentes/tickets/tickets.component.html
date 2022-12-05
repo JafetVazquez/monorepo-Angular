@@ -65,8 +65,13 @@
         <div fxLayout fxLayoutAlign="center">
             <mat-form-field class="example-full-width" appearance="fill">
                 <input class="form-control" matInput type="text" placeholder="Buscar" (keyup)="doFilter($any($event.target).value)">
-
             </mat-form-field>
+
+            <!-- <mat-form-field>
+                <input class="form-control" matInput type="text"
+                value="{{projectsList.selectedOptions.selected[0]?.value}}" 
+                (onKeyPress)="projectFilter($any($event.target).value)" hidden>
+            </mat-form-field> -->
 
             <mat-expansion-panel (opened)="actorPanelOpenState = true" (closed)="actorPanelOpenState = false" [ngClass]="projectsList.selectedOptions.selected.length > 0 ? 'active-filter-width': 'no-filter-width'">
                 <mat-expansion-panel-header [ngClass]="{'active-filter-bg': projectsList.selectedOptions.selected.length > 0}">
@@ -74,9 +79,9 @@
                         Proyectos
                     </mat-panel-title>
 
-                    <!-- <mat-panel-description [ngClass]="{'active-filter-text': projectsList.selectedOptions.selected.length > 0}">
-                        {{projectsList.selectedOptions.selected[0]?.value}}, {{projectsList.selectedOptions.selected[1]?.value}}
-                    </mat-panel-description> -->
+                    <mat-panel-description [ngClass]="{'active-filter-text': projectsList.selectedOptions.selected.length > 0}">
+                        <!-- {{projectsList.selectedOptions.selected[0]?.value}}, {{projectsList.selectedOptions.selected[1]?.value}} -->
+                    </mat-panel-description>
 
                     <span *ngIf="projectsList.selectedOptions.selected.length > 2">
                         +{{projectsList.selectedOptions.selected.length - 2}}
@@ -84,15 +89,26 @@
 
                 </mat-expansion-panel-header>
 
-                <mat-selection-list #projectsList [(ngModel)]="projects" [(ngModel)]="selectedProjects" (ngModelChange)="onGroupsChange($event)">
+                <mat-selection-list #projectsList >
                     <mat-list-option *ngFor="let proyecto of projects" [value]="proyecto.nombre_proyecto" >
                         {{proyecto.nombre_proyecto}}
                     </mat-list-option>
-<!-- 
-                    <p>{{projectsList.selectedOptions.selected.length}}</p> -->
+
                 </mat-selection-list>
 
             </mat-expansion-panel>
+
+            <!-- <div>
+                <mat-form-field *ngFor="let filter of filterSelectObj" style="margin-left: 15px">
+                    <mat-label>Filter {{filter.name}}</mat-label>
+                    <select matNativeControl name="{{filter.columnProp}}" [(ngModel)]="filter.modelValue" (change)="filterChange(filter, $event)">
+                        <option value="">-- Select {{filter.name}}</option>
+                        <option [value]="item" *ngFor="let item of filter.options">{{items}}</option>
+                    </select>
+                </mat-form-field>
+                &nbsp;
+                <button mat-flat-button color="warn" (click)="resetFilters()">Reset</button>
+            </div> -->
 
         </div>
         <br>

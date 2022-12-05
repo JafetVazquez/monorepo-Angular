@@ -4,6 +4,7 @@ import { Profile } from "../assets/profile";
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from "rxjs/operators";
 import { ActivatedRoute, Router } from "@angular/router";
+import { environment } from "../environments/environment";
 
 
 @Injectable({
@@ -11,7 +12,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class ProfileService {
 
-  apiURL = 'http://localhost:3000';
+  apiURL = environment.apiUrl
+  // apiURL = 'http://localhost:3000';
   // idUser = this.activatedRoute.snapshot.params['id'];
   idUser = this.activatedRoute.snapshot.params['id'];
   perfilData: any = {};

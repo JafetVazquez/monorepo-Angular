@@ -18,7 +18,15 @@ import { Tickets } from 'projects/prueba2/src/assets/tickets';
 })
 export class TicketsComponent implements OnInit {
 
-  apiURL = 'http://localhost:3000/tickets';
+  // apiURL = 'http://localhost:3000/tickets';
+  filterValues = {};
+  filterSelectObj = [
+    {
+      name: 'proyecto',
+      columnProp: 'proyecto',
+      options: []
+    }
+  ];
 
   displayedColumns: string[] = ['Folio', 'Título', 'Operador', 'Fecha', 'Estatus', 'Prioridad'];
 
@@ -40,9 +48,14 @@ export class TicketsComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef, private projectService: ProjectsService) {}
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef, private projectService: ProjectsService) {
+
+    
+
+  }
 
   ngOnInit(): void {
+
     this.ticketsService.getTickets().subscribe((data) => {
       this.data = new MatTableDataSource<Tickets>(data);
 
@@ -56,11 +69,30 @@ export class TicketsComponent implements OnInit {
     })
   }
 
-  onGroupsChange(selectedPizzas: string[]) {
-    console.log(selectedPizzas);
-  }
+  // onGroupsChange(selectedPizzas: string[]) {
+  //   console.log(selectedPizzas);
+  // }
 
   doFilter(value: any) {
     this.data.filter = value.trim().toLocaleLowerCase();
   }
+
+  projectFilter(value: any) {
+    this.data.filter = value.trim().toLocaleLowerCase();
+  }
+
+  // getFilterObject(fullObj: any, key: any){
+  //   const uniqChk: any[] = [];
+  //   fullObj.filter((obj: any) => {
+  //     if(!uniqChk.includes(obj[key])){
+  //       uniqChk.push(obj[key]);
+  //     }
+  //     return obj;
+  //   });
+  //   return uniqChk;
+  // }
+
+  // filterChange(filter: any, event: any){
+  //   this.filterValues[filter.columnProp] = event.target.value.trim().toLowerCase();
+  // }
 }

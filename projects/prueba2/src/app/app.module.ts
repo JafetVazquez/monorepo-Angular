@@ -32,6 +32,8 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatListModule } from "@angular/material/list";
+import { MatSelectModule } from "@angular/material/select";
+import { MatButtonModule } from "@angular/material/button";
 
 const materialModules = [
   MatTableModule,
@@ -41,7 +43,9 @@ const materialModules = [
   MatInputModule,
   MatDatepickerModule,
   MatExpansionModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule,
+  MatButtonModule
 ]
 
 @NgModule({
