@@ -36,7 +36,6 @@ export class CommentsComponent implements OnInit {
   CommentModel = new Comments("", "", this.idComment, "", "", "",  "", "");
   pipe = new DatePipe('en-US');
 
-
   constructor(private commentsService: CommentsService, private activatedRoute: ActivatedRoute, private http: HttpClient, private formBuilder: FormBuilder, private router: Router) {
 
     this.commentsService.getCommentsId(this.idComment).subscribe((data: any) => {
@@ -138,5 +137,4 @@ export class CommentsComponent implements OnInit {
       title: title
     })
   }
-
 }
