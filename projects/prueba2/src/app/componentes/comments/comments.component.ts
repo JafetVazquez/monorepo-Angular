@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Comment } from '@angular/compiler';
+import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { CommentsService } from "../../../services/comments.service";
-import Swal from 'sweetalert2';
 import { HttpClient } from "@angular/common/http";
+
+import Swal from 'sweetalert2';
 import { DatePipe } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Comments } from 'projects/prueba2/src/assets/comment';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-comments',
@@ -13,9 +16,13 @@ import { Comments } from 'projects/prueba2/src/assets/comment';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
+  
   public respuesta:any = [];
   public comentarios:any = [];
+  comentarioText!:string;
+  public form!: FormGroup;
 
+  
   crearComment!: FormGroup;
 
   apiURL = 'http://localhost:3000/comments';
@@ -34,10 +41,13 @@ export class CommentsComponent implements OnInit {
 
     this.commentsService.getCommentsId(this.idComment).subscribe((data: any) => {
       this.comments = data;
+
     })
+  
   }
 
   ngOnInit(): void {
+
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
     
     this.crearComment= new FormGroup({
@@ -65,18 +75,20 @@ export class CommentsComponent implements OnInit {
       text
     })
   }
+
+
   enviarData(){
-    this.commentsService.comment(this.apiURL,
-    {
-      text: this.crearComment.value.contenido_comentario
-    }
-    )
-    .subscribe(data => {
-      //console.log('Comentario enviado!!!');
-      this.crearComment.reset();
-      console.log('Enviar datos', this.crearComment);
-    })
-}
+      this.commentsService.comment(this.apiURL,
+      {
+        text: this.crearComment.value.contenido_comentario
+      }
+      )
+      .subscribe(data => {
+        //console.log('Comentario enviado!!!');
+        this.crearComment.reset();
+        console.log('Enviar datos', this.crearComment);
+      })
+  }
 
 
   addComment(){

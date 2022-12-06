@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from "rxjs/operators";
 import { Historial } from '../assets/historial';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,7 +15,7 @@ export class HistorialService {
 
   constructor(private http: HttpClient, private activatedRouter: ActivatedRoute, private router: Router) { }
   httpOptions={
-    Headers: new HttpHeaders({
+    headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
       'Access-Control-Allow-Origin': 'http://localhost:4200',
@@ -32,6 +33,25 @@ export class HistorialService {
 
   historial(): Observable<Historial>{
     return this.http.get<Historial>(this.apiURL + '/historial_ticket')
+  }
+
+  createHistorial(id: any): Observable<Historial>{
+    return this.http.post<Historial>(this.apiURL + '/historial_ticket', JSON.stringify(id), this.httpOptions).pipe(retry(1),catchError(this.handleError));
+  
+  }
+
+  handleError(error: any){
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent){
+      errorMessage = error.error.message;
+    }else{
+      errorMessage = `Error code: ${error.status} \nMessage: ${error.message}`
+    }
+
+    window.alert(errorMessage);
+    return throwError(() => {
+      return errorMessage;
+    })
   }
 
 

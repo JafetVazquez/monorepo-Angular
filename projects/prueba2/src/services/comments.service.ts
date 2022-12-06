@@ -1,22 +1,28 @@
+import { Comments } from './../assets/comment';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, } from "@angular/common/http";
-import { Comments } from '../assets/comment';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, retry, catchError, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { ActivatedRoute, Router,  } from "@angular/router";
+import { Observable, throwError } from "rxjs";
+import { retry, catchError } from "rxjs/operators";
+import { Comment } from '@angular/compiler';
+import { environment } from "../environments/environment";
+
 @Injectable({
   providedIn: 'root'
 })
 export class CommentsService {
 
-  apiURL = 'http://localhost:3000';
+  apiURL = environment.apiUrl
+  // apiURL = 'http://localhost:3000';
 
   consulta="?id_ticket="
 
   idComment= this.activatedRoute.snapshot.params['id']
   
   comments: any ={};
-
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { }
+  
+  
+  constructor (private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router){}
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -41,14 +47,13 @@ export class CommentsService {
     return this.http.get<Comment>(this.apiURL + '/comments/' + this.consulta + id).pipe(retry(1));
   }
 
-
   comment(url: string, body: any):Observable<Comments>{
     return this.http.post<Comments>(url, body);
   }
 
   // create a new comment
-  createComment(id: any): Observable<Comment>{
-    return this.http.post<Comment>(this.apiURL + '/comments', JSON.stringify(id), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  createComment(id: any): Observable<Comments>{
+    return this.http.post<Comments>(this.apiURL + '/comments', JSON.stringify(id), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // Update comments

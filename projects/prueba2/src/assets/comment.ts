@@ -1,4 +1,4 @@
-export class Comments {
+export class Comments{
     constructor(
         public id: string,
         public contenido_comentario: string,

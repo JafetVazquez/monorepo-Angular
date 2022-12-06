@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, ɵɵqueryRefresh } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { DataTablesModule } from "angular-datatables";
 import { ActivatedRoute } from "@angular/router";
@@ -8,7 +8,6 @@ import { ProjectsService } from "../../../services/projects.service";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
-import { ChangeDetectorRef } from "@angular/core";
 import { Tickets } from 'projects/prueba2/src/assets/tickets';
 
 @Component({
@@ -18,7 +17,15 @@ import { Tickets } from 'projects/prueba2/src/assets/tickets';
 })
 export class TicketsComponent implements OnInit {
 
-  apiURL = 'http://localhost:3000/tickets';
+  // apiURL = 'http://localhost:3000/tickets';
+  filterValues = {};
+  filterSelectObj = [
+    {
+      name: 'proyecto',
+      columnProp: 'proyecto',
+      options: []
+    }
+  ];
 
   displayedColumns: string[] = ['Folio', 'Título', 'Operador', 'Fecha', 'Estatus', 'Prioridad'];
 
@@ -40,27 +47,55 @@ export class TicketsComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort!: MatSort;
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef, private projectService: ProjectsService) {}
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private ticketsService: TicketsService, private ref: ChangeDetectorRef, private projectService: ProjectsService) {
+
+    
+
+  }
 
   ngOnInit(): void {
+
+    this.refresh();
+
+    // this.projectService.getProjects().subscribe((data: any) => {
+    //   this.projects = data;      
+    // })
+  }
+
+  // onGroupsChange(selectedPizzas: string[]) {
+  //   console.log(selectedPizzas);
+  // }
+
+  doFilter(value: any) {
+    this.data.filter = value.trim().toLocaleLowerCase();
+  }
+
+  projectFilter(value: any) {
+    this.data.filter = value.trim().toLocaleLowerCase();
+  }
+
+  refresh(){
     this.ticketsService.getTickets().subscribe((data) => {
       this.data = new MatTableDataSource<Tickets>(data);
 
       this.data.paginator = this.paginator;
       this.data.sort = this.sort;
-      
-    })
-
-    this.projectService.getProjects().subscribe((data: any) => {
-      this.projects = data;      
+      this.ref.detectChanges();
     })
   }
 
-  onGroupsChange(selectedPizzas: string[]) {
-    console.log(selectedPizzas);
-  }
+  // getFilterObject(fullObj: any, key: any){
+  //   const uniqChk: any[] = [];
+  //   fullObj.filter((obj: any) => {
+  //     if(!uniqChk.includes(obj[key])){
+  //       uniqChk.push(obj[key]);
+  //     }
+  //     return obj;
+  //   });
+  //   return uniqChk;
+  // }
 
-  doFilter(value: any) {
-    this.data.filter = value.trim().toLocaleLowerCase();
-  }
+  // filterChange(filter: any, event: any){
+  //   this.filterValues[filter.columnProp] = event.target.value.trim().toLowerCase();
+  // }
 }

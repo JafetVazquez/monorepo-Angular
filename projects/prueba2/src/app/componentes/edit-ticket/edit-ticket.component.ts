@@ -69,7 +69,7 @@ export class EditTicketComponent implements OnInit {
   today: Date = new Date();
   pipe = new DatePipe('en-US');
   todayWithPipe: string | null | undefined = '';
-  ticketModel = new Tickets("", this.folio, "", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
+  ticketModel = new Tickets("", "", this.folio, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
   constructor(public ticketsService: TicketsService, public router: Router, private activatedRoute: ActivatedRoute) { }
 
