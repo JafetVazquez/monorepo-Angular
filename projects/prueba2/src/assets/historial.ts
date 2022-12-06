@@ -1,11 +1,11 @@
 export class Historial{
     constructor(
-        private id_historial_ticket: string,
-        private id_ticket: string,
-        private id_usuario: string,
-        private fc_modificacion: string,
-        private id_estatus: string,
-        private id_especialista: string
+       public id: string,
+       public id_ticket: string,
+       public id_usuario: string,
+       public fc_modificacion: string,
+       public id_estatus: string,
+       public id_especialista: string
 
     ){}
     
