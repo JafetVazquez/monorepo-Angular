@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, ɵɵqueryRefresh } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { DataTablesModule } from "angular-datatables";
 import { ActivatedRoute } from "@angular/router";
@@ -8,7 +8,6 @@ import { ProjectsService } from "../../../services/projects.service";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
-import { ChangeDetectorRef } from "@angular/core";
 import { Tickets } from 'projects/prueba2/src/assets/tickets';
 
 @Component({
@@ -56,17 +55,11 @@ export class TicketsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.ticketsService.getTickets().subscribe((data) => {
-      this.data = new MatTableDataSource<Tickets>(data);
+    this.refresh();
 
-      this.data.paginator = this.paginator;
-      this.data.sort = this.sort;
-      
-    })
-
-    this.projectService.getProjects().subscribe((data: any) => {
-      this.projects = data;      
-    })
+    // this.projectService.getProjects().subscribe((data: any) => {
+    //   this.projects = data;      
+    // })
   }
 
   // onGroupsChange(selectedPizzas: string[]) {
@@ -79,6 +72,16 @@ export class TicketsComponent implements OnInit {
 
   projectFilter(value: any) {
     this.data.filter = value.trim().toLocaleLowerCase();
+  }
+
+  refresh(){
+    this.ticketsService.getTickets().subscribe((data) => {
+      this.data = new MatTableDataSource<Tickets>(data);
+
+      this.data.paginator = this.paginator;
+      this.data.sort = this.sort;
+      this.ref.detectChanges();
+    })
   }
 
   // getFilterObject(fullObj: any, key: any){

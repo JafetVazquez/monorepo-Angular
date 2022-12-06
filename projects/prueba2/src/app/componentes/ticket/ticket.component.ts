@@ -22,7 +22,7 @@ export class TicketComponent implements OnInit {
   today: Date = new Date();
   pipe = new DatePipe('en-US');
   todayWithPipe: string | null | undefined = '';
-  ticketModel = new Tickets("", "", "", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
+  ticketModel = new Tickets("", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
   projects: any[] = [];
   // projects: any = {};
   projectSelected = '';
@@ -60,7 +60,7 @@ export class TicketComponent implements OnInit {
 
   submit(){
     this.ticketsService.createTicket(this.ticketModel).subscribe((data: {}) => {
-      // console.log("formulario enviado: ", this.ticketModel);
+      console.log("formulario enviado: ", this.ticketModel);
 
       this.router.navigate(['/tickets'])
     })
