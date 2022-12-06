@@ -28,6 +28,7 @@ export class CommentsComponent implements OnInit {
   todayWithPipe: string | null | undefined = '';
   CommentModel = new Comments("", "", this.idComment, "", "", "",  "", "");
   pipe = new DatePipe('en-US');
+  
 
   constructor(private commentsService: CommentsService, private activatedRoute: ActivatedRoute, private http: HttpClient, private formBuilder: FormBuilder, private router: Router) {
 
@@ -43,7 +44,7 @@ export class CommentsComponent implements OnInit {
      'id': new FormControl(""),
      'contenido_comentario': new FormControl("", Validators.required),
      'id_ticket': new FormControl(""),
-     'comentario_usuario': new FormControl("", Validators.required),
+     'comentario_usuario': new FormControl(""),
      'fecha_comentario':new FormControl(""),
      'fecha_creacion': new FormControl(""),
      'fecha_culminacion': new FormControl(""),

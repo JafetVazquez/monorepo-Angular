@@ -1,30 +1,27 @@
 <!-- Contenedor Principal -->
 <div class="cont">
     <br>
-    <button type="button" style="border: none;" routerLink="/registrar/ticket">
+    <button type="button" style="border: none;" routerLink="/tickets">
         <img src="../../../assets/reject.png" height ="40"  style="border: none;"/>
     </button>
     <div class="comments-container">
         <b><h1 mb="1">COMENTARIOS</h1></b>
-        <h6>ticket: CO90922A1</h6>
+        <h6 class="folio" >ticket: CO90922A1</h6>
 
         <ul class="comments-list">
             <li *ngFor="let comment of comments">
                 <div class="comment-main-level">
-                    <!-- Avatar -->
-                    <div class="comment-avatar ocultar-div">
-                    </div>
+                   
                     <!-- Contenedor del Comentario -->
                     <div class="comment-box">
                         <div class="comment-head">
                             <div>
-                               
                                 <img src="https://pic.onlinewebfonts.com/svg/img_184513.png" alt="">
                                 <h6>
                                     <a (click)="perfil()" style="cursor: pointer;" class="author">{{comment.comentario_usuario}}</a>
                                 </h6>             
-                                <span class="date">{{comment.fecha_comentario}}
-                                </span>
+                                <p class="date">{{comment.fecha_comentario}}
+                                </p>
                             </div>
                         </div>
                         <div class="comment-content">
@@ -34,24 +31,23 @@
                 </div>
             </li>
         </ul> <br><br>
-        <form #f="ngForm" (ngSubmit)="submit()" method="post">
+        <form #f="ngForm" (ngSubmit)="submit()" method="post" class="form-group">
             <div > 
                 <input type="text" name="Usuario" [(ngModel)]="CommentModel.comentario_usuario" placeholder="Usuario"
-                class="usuario" required>
+                class="usuario " required>
                 <input type="text" name="ComentarioUsuario" [(ngModel)]="CommentModel.comentario_usuario" hidden>
                 <input type="text" name="fechaComentario" [(ngModel)]="todayWithPipe" placeholder="fechaComentario" hidden>
             </div><br>
-            <div  class="form-group">
+            <div>
                 <textarea 
                 name = "contenido_comentario" id= "commentArea" 
                 [(ngModel)]="CommentModel.contenido_comentario"
                 cols= "39" 
                 rows= "8" 
-                class= "text-comment" 
                 placeholder= "Escribe tu comentario... " required>     
                 </textarea>                
             </div>
-            <button class="button-inline" type="submit" >Enviar   
+            <button class="btn btn-dark mt-3 d-grid gap-2 justify-content-center align-items-center" type="submit" >Enviar   
             </button>
         </form>
 </div>
