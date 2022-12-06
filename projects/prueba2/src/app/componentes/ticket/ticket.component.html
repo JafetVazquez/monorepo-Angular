@@ -54,8 +54,14 @@
                 <br>                
                 <form #f="ngForm" (ngSubmit)="submit()" class="login-form row g-3" method="post" action="#" >
 
+                    <!-- <div>
+                        <input type="text" class="form-control" id="inputEmail4" name="folio"  placeholder="{{folio}}" value="{{folio}}" [(ngModel)]="ticketModel.folio" required>
+
+                    </div> -->
+
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Título</label>
+
                         <input type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="ticketModel.titulo" required>
 
                         <label for="inputEmail4" class="form-label">Usuario</label>

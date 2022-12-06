@@ -50,7 +50,7 @@ const routes: Routes = [
         component: TicketComponent
     },
     {
-        path:'ticket/comments',
+        path:'ticket/comments/:id',
         component: CommentsComponent
     },
     {

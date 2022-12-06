@@ -3,13 +3,16 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Projects } from "../assets/projects";
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from "rxjs/operators";
+import { environment } from "../environments/environment";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
 
-  apiURL = 'http://localhost:3000';
+  apiURL = environment.apiUrl
+  // apiURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
