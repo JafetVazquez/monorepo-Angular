@@ -4,6 +4,7 @@ import { DataTablesModule } from "angular-datatables";
 import { ActivatedRoute } from "@angular/router";
 import { TicketsService } from "../../../services/tickets.service";
 import { Tickets } from "../../../assets/tickets";
+import { environment } from "../../../environments/environment";
 
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
@@ -16,7 +17,7 @@ import { MatTableDataSource } from "@angular/material/table";
 })
 export class TicketGestorComponent implements OnInit, OnDestroy {
 
-  apiURL = 'http://localhost:3000/tickets';
+  apiURL = environment.apiUrl;
   displayedColumns: string[] = ['Folio', 'Título', 'Operador', 'Fecha', 'Estatus', 'Prioridad'];
   dataToDisplay: any = [];
   data: any;
@@ -35,7 +36,7 @@ export class TicketGestorComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.http.get(this.apiURL + '?ticket_proyecto=' + this.codigoProject).subscribe((data: any) => {
+    this.http.get(this.apiURL + '/ticket?proyecto=' + this.codigoProject).subscribe((data: any) => {
       this.data = new MatTableDataSource<Tickets>(data);
 
       this.data.paginator = this.paginator;
