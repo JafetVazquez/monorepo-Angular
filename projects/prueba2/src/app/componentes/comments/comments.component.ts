@@ -35,6 +35,7 @@ export class CommentsComponent implements OnInit {
   todayWithPipe: string | null | undefined = '';
   CommentModel = new Comments("", "", this.idComment, "", "", "",  "", "");
   pipe = new DatePipe('en-US');
+  
 
   constructor(private commentsService: CommentsService, private activatedRoute: ActivatedRoute, private http: HttpClient, private formBuilder: FormBuilder, private router: Router) {
 
@@ -49,29 +50,18 @@ export class CommentsComponent implements OnInit {
 
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
     
-   this.crearComment= new FormGroup({
-    'id': new FormControl(""),
-    'contenido_comentario': new FormControl(""),
-    'id_ticket': new FormControl(""),
-    'comentario_usuario': new FormControl(""),
-    'fecha_comentario':new FormControl(""),
-    'fecha_creacion': new FormControl(""),
-    'fecha_culminacion': new FormControl(""),
-    'estatus': new FormControl("")
-  });
-
-
-    this.crearComment= this.formBuilder.group({
-      // 'id_comentario': [""],
-      'contenido_comentario':[""] ,
-      // 'id_ticket':[""],
-      // 'comentario_usuario':[""],
-      // 'fecha_comentario':[""],
-      // 'fecha_creacion':[""],
-      // 'fecha_culminacion':[""],
-      // 'estatus': [""],
-    })
-    
+    this.crearComment= new FormGroup({
+     'id': new FormControl(""),
+     'contenido_comentario': new FormControl("", Validators.required),
+     'id_ticket': new FormControl(""),
+     'comentario_usuario': new FormControl(""),
+     'fecha_comentario':new FormControl(""),
+     'fecha_creacion': new FormControl(""),
+     'fecha_culminacion': new FormControl(""),
+     'estatus': new FormControl("")
+   });
+ 
+ 
   }
 
   perfil(){

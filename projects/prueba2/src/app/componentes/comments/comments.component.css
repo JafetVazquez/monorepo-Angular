@@ -5,7 +5,7 @@
  
  }
  img{
-   width: 60px;
+   width: 55px;
    float: left;
    padding: 3px 5px;
    font-weight: 700;
@@ -16,9 +16,10 @@
  }
  
  h1{
-   color: #017999;
- 
+   color: black;
+   
  }
+
  
  ul {
    list-style-type: none;
@@ -62,33 +63,28 @@
  
  /* Avatar
  ---------------------------*/
- .comments-list .comment-avatar {
-   width: 65px;
-   height: 65px;
-   position: relative;
-   z-index: 99;
-   float: left;
-   border: 3px solid #FFF;
-  
-   overflow: hidden;
- }
  
  .comments-list .comment-avatar img {
    width: 100%;
    height: 100%;
  }
- 
+
+ p{
+  color: rgb(59, 58, 58);
+  float: right;
+  font-size: 15px;
+ }
  
  /* Caja del Comentario
  ---------------------------*/
  .comments-list .comment-box {
    width: 680px;
-   float: right;
-   position: relative;
+   float: none;
+   position: center;
    -webkit-box-shadow: 0 1px 1px rgba(54, 52, 52, 0.007);
    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-   border-radius: 50px;
+   border-radius: 9px;
  }
  
  .comments-list .comment-box:before, .comments-list .comment-box:after {
@@ -99,7 +95,7 @@
    display: block;
    border-width: 10px 12px 10px 0;
    border-style: solid;
-   border-color: transparent #FCFCFC;
+   border-color: transparent #6EB8CC;
    top: 8px;
    left: -11px;
  }
@@ -112,17 +108,17 @@
  
  
  .comment-box .comment-head {
-   background: #FCFCFC;
+   background: #6EB8CC;
    padding: 10px 12px;
-   border-bottom: 1px solid #c8d7db;
+   border-bottom: 1px solid #6EB8CC;
    overflow: hidden;
-   -webkit-border-radius: 4px 4px 0 0;
-   -moz-border-radius: 4px 4px 0 0;
-   border-radius: 4px 4px 0 0;
+   -webkit-border-radius: 2px 2px 0 0;
+   -moz-border-radius: 2px 2px 0 0;
+   border-radius: 2px 4px 0 0;
  }
  
  .comment-box .comment-head i {
-   float: right;
+   
    margin-left: 14px;
    position: relative;
    top: 2px;
@@ -146,9 +142,9 @@
  }
  
  .comment-box .comment-content {
-   background: #FFF;
-   padding: 12px;
-   font-size: 15px;
+   background: rgba(53, 51, 51, 0.151);
+   padding: 17px;
+   font-size: 17px;
    color:black;
    -webkit-border-radius: 0 0 4px 4px;
    -moz-border-radius: 0 0 4px 4px;
@@ -165,35 +161,46 @@
    margin-left: 10px;
    -webkit-border-radius: 3px;
    -moz-border-radius: 3px;
-   border-radius: 3px;
+   border-radius: 15px;
+ }
+
+
+ .form-group .usuario{
+   background-color: rgb(245, 248, 250);
+   padding: 0px 4px 0px 4px;
+   min-height: 22px;
+   width: 400px;
+   font-size: 18px;
+   border-radius: 9px;
  }
  
- .usuario{
+
+ /* .form-group {
+   width: 0px;
+   height: 0px;
+   align-content: center;
+   background: red;
+   
+ } */
+ .form-group textarea{
    background-color: rgb(245, 248, 250);
    padding: 0px 4px 0px 4px;
-   min-height: 20px;
-   width: 380px;
+   min-height: 22px;
+   width: 400px;
    font-size: 18px;
-  
+   border-radius: 9px;
  }
- textarea{
-   background-color: rgb(245, 248, 250);
-   padding: 0px 4px 0px 4px;
-   min-height: 20px;
-   width: auto;
+
+ .btn{
+  width: 200px;
    font-size: 18px;
- }
- .button-inline{
-   display: inline-block;
-   padding: 0.85em 1.5em;
-   font-size: 1 em;
    cursor: pointer;
    text-decoration: none;
-   color: #ffffff;
-   background-color: darkgrey;
    border: none;
-   border-radius: 0;
+   border-radius: 9px;
+   display: inline-block 
  }
+
  /** =====================
  * Responsive
  ========================*/
