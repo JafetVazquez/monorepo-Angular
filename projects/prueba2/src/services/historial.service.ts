@@ -4,12 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from "rxjs/operators";
 import { Historial } from '../assets/historial';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HistorialService {
-  apiURL = 'http://localhost:3000';
+  // apiURL = 'http://localhost:3000';
+  apiURL = environment.apiUrl
   data: any;
   ticket='?id_ticket='
 
