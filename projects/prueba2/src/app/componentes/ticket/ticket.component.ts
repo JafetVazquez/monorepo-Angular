@@ -17,7 +17,7 @@ export class TicketComponent implements OnInit {
 
   id: string = '';
   folio: string = '';
-  
+  area: string = '';
 
   today: Date = new Date();
   pipe = new DatePipe('en-US');
@@ -26,7 +26,6 @@ export class TicketComponent implements OnInit {
   projects: any[] = [];
   // projects: any = {};
   projectSelected = '';
-  lista:string[]=["hola","que","tal", "estas"];
 
   constructor(private ticketsService: TicketsService, private router: Router, private projectsService: ProjectsService) { }
 
@@ -47,7 +46,7 @@ export class TicketComponent implements OnInit {
     // console.log(this.getProjects());
     this.projectsService.getProjects().subscribe((data: any) => {
       this.projects = data;
-      // console.log(this.projects);
+      console.log(this.projects);
     })
     
   }

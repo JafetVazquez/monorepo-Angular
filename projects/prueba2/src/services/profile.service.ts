@@ -28,7 +28,7 @@ export class ProfileService {
       'Access-Control-Allow-Credentials': 'true',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'ngrok-skip-browser-warning': 'ngrok-skip-browser-warning',
-      'User-Agent': 'custom/non-standard'
+      // 'User-Agent': 'custom/non-standard'
       
     })
   };

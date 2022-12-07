@@ -31,7 +31,7 @@ export class ProjectsService {
 
   // get all projects
   getProjects(): Observable<Projects> {
-    return this.http.get<Projects>(this.apiURL + '/proyecto', this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Projects>(this.apiURL + '/proyecto/', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // get project by id

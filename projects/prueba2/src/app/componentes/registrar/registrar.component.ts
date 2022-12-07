@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { FormControl, FormGroup } from "@angular/forms";
+import { environment } from "../../../environments/environment";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
@@ -17,7 +17,8 @@ export class RegistrarComponent implements OnInit {
   
   signUp: FormGroup | any;
   signUser: any;
-  apiURL = 'http://localhost:3000/users';
+  // apiURL = 'http://localhost:3000/users';
+  apiURL = environment.apiUrl
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -34,7 +35,7 @@ export class RegistrarComponent implements OnInit {
   ngOnInit(): void {
     this.signUp = new FormGroup({
       'id': new FormControl(),
-      'nombre': new FormControl(),
+      'nombre': new FormControl('', Validators.required),
       'apellidos': new FormControl(),
       'correo': new FormControl(),
       'password': new FormControl(),
@@ -48,7 +49,7 @@ export class RegistrarComponent implements OnInit {
 
   signUpData(signUp: FormGroup){
     this.signUser = this.signUp.value.codigo;
-    this.http.post<any>(this.apiURL, this.signUp.value).subscribe(data => {
+    this.http.post<any>(this.apiURL + '/users', this.signUp.value).subscribe(data => {
       // alert('datos añadidos');
       this.msgAlert('success', 'Usuario Registrado');
       this.signUp.reset();
