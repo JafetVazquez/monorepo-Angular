@@ -1,48 +1,48 @@
 <div class="cont">
 
-    <button type="button" style="border: none;" routerLink="/registrar/ticket"><img src="../../../assets/reject.png" height ="40"  style="border: none;"/></button>
+    <button type="button" style="border: none;" routerLink="/tickets"><img src="../../../assets/reject.png" height ="40"  style="border: none;"/></button>
 
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
 
-                <form [formGroup]="createHistorial" (ngSubmit)="submit()" class="login-form row g-3" method="post" action="#" >
+                <form #f="ngForm" (ngSubmit)="submit()" class="login-form row g-3" method="post" action="#">
 
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">id</label>
-                        <input type="text" formControlName="id" class="form-control">
+                        <input type="text" class="form-control" id="inputEmail4" name="id" [(ngModel)]="historialModel.id" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">id_ticket</label>
-                        <input type="text" formControlName="id_ticket" class="form-control">
+                        <input  type="text" class="form-control" id="inputEmail4" name="id_ticket" [(ngModel)]="historialModel.id_ticket" readonly>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">id_usuario</label>
-                        <input type="text" formControlName="id_usuario" class="form-control">
+                        <label for="inputEmail4" class="form-label">id_usuario </label>
+                        <input type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="historialModel.id_usuario" required>
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">fc_modificacion </label>
-                        <input type="text" formControlName="fc_modificacion"  class="form-control" >
+                        <input  type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="historialModel.fc_modificacion" readonly placeholder="{{date | date:'dd/MM/yyyy'}}">
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">id_estatus</label>
-                        <input type="text" formControlName="id_estatus" class="form-control">
+                        <input  type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="historialModel.id_estatus" required>
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">id_especialista</label>
-                        <input type="text" formControlName="id_especialista" class="form-control">
+                        <input  type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="historialModel.id_especialista">
                     </div>
         
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 
-                <h1>HISTORIAL <h6 >ticket: {{f_ticket}}</h6></h1>
+                <h1>HISTORIAL <h6 >ticket: {{this.folio}} </h6></h1>
 
                 <div></div>
 
                 <ul class="timeline" *ngFor="let historial of historialTicket">
                     <li>
-                        <h6 class="float-right">{{historial.id_estatus}} - {{historial.fc_modificacion}}- </h6>
+                        <h6 class="float-right">{{historial.id_estatus}} - {{historial.fc_modificacion | date:'dd/MM/yyyy'}}- </h6>          
                         <p>ticket creado por <a class="float-right" style="cursor: pointer;" (click)="perfil()">id-usuario:{{historial.id_usuario}} @usuario1</a></p>
                     </li>
                 </ul>

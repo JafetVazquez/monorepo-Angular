@@ -25,7 +25,7 @@
     {
       "id": 2,
       "titulo": "fdsafa",
-      "folio": "",
+      "folio": "fredfgrg",
       "descripcion": "hgfhf",
       "coordenadas": "",
       "creacion": "",
@@ -50,7 +50,7 @@
     {
       "id": 3,
       "titulo": "inaasda",
-      "folio": "",
+      "folio": "fgshbgb",
       "descripcion": "Provident saepe sit",
       "coordenadas": "",
       "creacion": "",
@@ -71,6 +71,27 @@
       "fecha_asignado": "2022-12-23",
       "ticket_especialistaasignado": "Panchito Pérez",
       "ticket_tipopstatus": "Asignado"
+    },
+    {
+      "id": 4,
+      "titulo": "",
+      "folio": "",
+      "descripcion": "",
+      "coordenadas": "",
+      "creacion": "",
+      "atendido": "",
+      "asignado": "",
+      "proceso": "",
+      "cancelado": "",
+      "reasignado": "",
+      "resuelto": "",
+      "validado": "",
+      "autor": "",
+      "proyecto": "",
+      "area": "",
+      "especialista": "",
+      "prioridad": "",
+      "estatus": ""
     }
   ],
   "users": [
@@ -137,7 +158,7 @@
   ],
   "historial_ticket": [
     {
-      "id_historial_ticket": 1,
+      "id": 1,
       "id_ticket": 2,
       "id_usuario": 1,
       "fc_modificacion": "2022-11-20",
@@ -145,7 +166,7 @@
       "id_especialista": ""
     },
     {
-      "id_historial_ticket": 2,
+      "id": 2,
       "id_ticket": 2,
       "id_usuario": 1,
       "fc_modificacion": "2022-11-21",
@@ -153,7 +174,7 @@
       "id_especialista": ""
     },
     {
-      "id_historial_ticket": 3,
+      "id": 3,
       "id_ticket": 2,
       "id_usuario": 1,
       "fc_modificacion": "2022-11-22",
@@ -161,12 +182,28 @@
       "id_especialista": ""
     },
     {
-      "id_historial_ticket": 3,
+      "id": 3,
       "id_ticket": 3,
       "id_usuario": 1,
       "fc_modificacion": "2022-11-22",
       "id_estatus": "Resuelto",
       "id_especialista": ""
+    },
+    {
+      "id": 4,
+      "id_ticket": "3",
+      "id_usuario": "yop",
+      "fc_modificacion": "2022-12-07T22:02:16.524Z",
+      "id_estatus": "resuelto",
+      "id_especialista": "12"
+    },
+    {
+      "id": 5,
+      "id_ticket": "2",
+      "id_usuario": "gdfg",
+      "fc_modificacion": "2022-12-09T16:28:42.045Z",
+      "id_estatus": "fdgdfg",
+      "id_especialista": "dfgdg"
     }
   ],
   "Comments": [
