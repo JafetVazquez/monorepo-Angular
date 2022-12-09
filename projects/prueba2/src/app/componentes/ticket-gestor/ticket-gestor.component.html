@@ -3,6 +3,7 @@
 <br><h3 class="text-center pt-3">TICKETS</h3>
 <div class="cont"> <br>
     <div class="row">
+
         <!-- <div class="col sm-mb-3 float: right padding:10 px">
             <div class="form-group">
                 <label for="sel1" class="form-label">Fecha:</label><br>
@@ -69,7 +70,10 @@
             </mat-form-field>
 
 
+            <br>
+            <br>
         </div>
+
 
         <br>
         <br>
@@ -89,22 +93,22 @@
 
             <ng-container matColumnDef="Operador">
                 <th mat-cell *matHeaderCellDef mat-sort-header>Operador</th>
-                <td mat-cell *matCellDef="let element">{{element.ticket_especialistaasignado}}</td>
+                <td mat-cell *matCellDef="let element">{{element.especialista}}</td>
             </ng-container>
 
             <ng-container matColumnDef="Fecha">
                 <th mat-cell *matHeaderCellDef mat-sort-header>Fecha</th>
-                <td mat-cell *matCellDef="let element">{{element.fecha_asignado}}</td>
+                <td mat-cell *matCellDef="let element">{{element.asignado}}</td>
             </ng-container>
 
             <ng-container matColumnDef="Estatus">
                 <th mat-cell *matHeaderCellDef mat-sort-header>Estatus</th>
-                <td mat-cell *matCellDef="let element">{{element.ticket_tipopstatus}}</td>
+                <td mat-cell *matCellDef="let element">{{element.estatus}}</td>
             </ng-container>
 
             <ng-container matColumnDef="Prioridad">
                 <th mat-cell *matHeaderCellDef mat-sort-header>Prioridad</th>
-                <td mat-cell *matCellDef="let element">{{element.ticket_tipoprioridad}}</td>
+                <td mat-cell *matCellDef="let element">{{element.prioridad}}</td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

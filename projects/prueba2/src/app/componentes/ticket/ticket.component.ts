@@ -17,12 +17,12 @@ export class TicketComponent implements OnInit {
 
   id: string = '';
   folio: string = '';
-  
+  area: string = '';
 
   today: Date = new Date();
   pipe = new DatePipe('en-US');
   todayWithPipe: string | null | undefined = '';
-  ticketModel = new Tickets("", "", "", "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
+  ticketModel = new Tickets("", "", this.folio, "", "", this.todayWithPipe, "", "", "", "", "", "", "", "", "", "", "", "", "");
   projects: any[] = [];
   // projects: any = {};
   projectSelected = '';
@@ -41,7 +41,13 @@ export class TicketComponent implements OnInit {
 
     // console.log(this.todayWithPipe);    
     
+    // console.log(this.projects);
+    
     // console.log(this.getProjects());
+    this.projectsService.getProjects().subscribe((data: any) => {
+      this.projects = data;
+      console.log(this.projects);
+    })
     
   }
 
@@ -60,7 +66,7 @@ export class TicketComponent implements OnInit {
 
   submit(){
     this.ticketsService.createTicket(this.ticketModel).subscribe((data: {}) => {
-      console.log("formulario enviado: ", this.ticketModel);
+      // console.log("formulario enviado: ", this.ticketModel);
 
       this.router.navigate(['/tickets'])
     })
@@ -69,8 +75,8 @@ export class TicketComponent implements OnInit {
   // get project
   getProjects(){
     this.projectsService.getProjects().subscribe((data: any) => {
-      // console.log(data);
       this.projects = data;
+      console.log(this.projects);
     })
   }
 }

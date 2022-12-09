@@ -34,6 +34,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatListModule } from "@angular/material/list";
 import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from "@angular/material/button";
+import { AddProjectComponent } from './componentes/add-project/add-project.component';
 
 const materialModules = [
   MatTableModule,
@@ -64,7 +65,8 @@ const materialModules = [
     EditTicketComponent,
     TicketGestorComponent,
     ProyectosComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,

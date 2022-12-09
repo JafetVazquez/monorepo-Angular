@@ -16,6 +16,7 @@ import { ProyectosComponent } from "./componentes/proyectos/proyectos.component"
 import { TicketGestorComponent } from "./componentes/ticket-gestor/ticket-gestor.component";
 import { PerfilComponent } from "projects/login/src/app/reg_log/perfil/perfil.component";
 import { ProfileComponent } from "./componentes/profile/profile.component";
+import { AddProjectComponent } from "./componentes/add-project/add-project.component";
 
 
 
@@ -68,6 +69,10 @@ const routes: Routes = [
     {
         path:'proyectos',
         component: ProyectosComponent
+    },
+    {
+        path:'proyectos/nuevoProyecto',
+        component:AddProjectComponent
     },
     {
         path:'proyecto/:codigo/tickets',

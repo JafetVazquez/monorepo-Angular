@@ -45,6 +45,8 @@
                 <div class="mb-3 bg-color">
                     <label>Nombre(s)</label>
                     <input type="text" formControlName="nombre" class="form-control" required>
+
+                    <p *ngIf="signUp.controls['nombre'].errors.required">nombre es requerido</p>
                 </div><br>
 
                 <div class="mb-3 bg-color">
