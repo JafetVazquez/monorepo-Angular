@@ -32,9 +32,16 @@ export class CommentsComponent implements OnInit {
   idComment = this.activatedRoute.snapshot.params['id'];
   folio= this.activatedRoute.snapshot.params['folio'];
   comments: any = [];
-  todayWithPipe: string | null | undefined = '';
-  CommentModel = new Comments("", "", this.idComment, "", "", "",  "", "");
-  pipe = new DatePipe('en-US');
+
+  date: Date = new Date();
+  
+  // todayWithPipe: string | null | undefined = '';
+
+  // pipe = new DatePipe('en-US');
+  
+
+  CommentModel = new Comments("", "", this.idComment, "", "", this.date,  "", "");
+  
   
 
   constructor(private commentsService: CommentsService, private activatedRoute: ActivatedRoute, private http: HttpClient, private formBuilder: FormBuilder, private router: Router) {
@@ -43,25 +50,28 @@ export class CommentsComponent implements OnInit {
       this.comments = data;
 
     })
+    console.log(this.CommentModel);
   
   }
-
   ngOnInit(): void {
 
-    this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
-    
+    // this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
+    // // this.date.setDate(11); 
+   console.log(this.date);
+
     this.crearComment= new FormGroup({
      'id': new FormControl(""),
-     'contenido_comentario': new FormControl("", Validators.required),
+     'contenido_comentario': new FormControl(""),
      'id_ticket': new FormControl(""),
      'comentario_usuario': new FormControl(""),
      'fecha_comentario':new FormControl(""),
-     'fecha_creacion': new FormControl(""),
+     'fecha_creacion': new FormControl("", Validators.required),
      'fecha_culminacion': new FormControl(""),
      'estatus': new FormControl("")
    });
  
  
+    // console.log(this.todayWithPipe); 
   }
 
   perfil(){

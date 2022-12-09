@@ -19,36 +19,50 @@
                             <div>
                                 <img src="https://pic.onlinewebfonts.com/svg/img_184513.png" alt="">
                                 <h6>
-                                    <a (click)="perfil()" style="cursor: pointer;" class="author">{{comment.comentario_usuario}}</a>
+                                    <a (click)="perfil()" style="cursor: pointer;" class="author" >{{comment.comentario_usuario}}</a>
                                 </h6>             
-                                <p class="date">{{comment.fecha_comentario}}
+                                <p class="date">
+                                    {{comment.fecha_creacion | date
+                                    : 'dd/MM/yyyy'}}
                                 </p>
                             </div>
                         </div>
                         <div class="comment-content">
-                            {{comment.body}}
+                            {{comment.contenido_comentario}}
                         </div>
                     </div>
                 </div>
             </li>
         </ul> <br><br>
-        <form #f="ngForm" (ngSubmit)="submit()" method="post" class="form-group">
-            <div > 
+        <form #f="ngForm" (ngSubmit)="submit()" method="post" >
+            <div class="d-flex justify-content-center"> 
                 <input type="text" name="Usuario" [(ngModel)]="CommentModel.comentario_usuario" placeholder="Usuario"
                 class="usuario " required>
                 <input type="text" name="ComentarioUsuario" [(ngModel)]="CommentModel.comentario_usuario" hidden>
-                <input type="text" name="fechaComentario" [(ngModel)]="todayWithPipe" placeholder="fechaComentario" hidden>
+                <input type="text" name="fechaComentario" [(ngModel)]="CommentModel.fecha_creacion" hidden
+               >
             </div><br>
-            <div>
-                <textarea 
-                name = "contenido_comentario" id= "commentArea" 
-                [(ngModel)]="CommentModel.contenido_comentario"
-                cols= "39" 
-                rows= "8" 
-                placeholder= "Escribe tu comentario... " required>     
-                </textarea>                
+            <div class="d-flex justify-content-center">
+                    <textarea
+                    name = "contenido_comentario" id= "commentArea"
+                    [(ngModel)]="CommentModel.contenido_comentario"
+                    cols="45"
+                    rows= "8"
+                    placeholder= "Escribe tu comentario... " 
+                    required>
+                    </textarea>               
             </div>
-            <button class="btn btn-dark mt-3 d-grid gap-2 justify-content-center align-items-center" type="submit" >Enviar   
-            </button>
+            <div>
+                <button class="btn btn-dark btn-block mt-3 d-grid gap-2 mx-auto"  type="submit" >Enviar   
+                </button>
+            </div>
         </form>
+        <!-- {{submit("contenido_comentario" | json)}} -->
 </div>
+<script type="text/javascript">
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
+</script>

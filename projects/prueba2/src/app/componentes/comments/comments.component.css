@@ -165,7 +165,7 @@
  }
 
 
- .form-group .usuario{
+ .usuario{
    background-color: rgb(245, 248, 250);
    padding: 0px 4px 0px 4px;
    min-height: 22px;
@@ -182,17 +182,16 @@
    background: red;
    
  } */
- .form-group textarea{
+ textarea{
    background-color: rgb(245, 248, 250);
    padding: 0px 4px 0px 4px;
    min-height: 22px;
-   width: 400px;
    font-size: 18px;
    border-radius: 9px;
  }
 
  .btn{
-  width: 200px;
+   width: 380px;
    font-size: 18px;
    cursor: pointer;
    text-decoration: none;
