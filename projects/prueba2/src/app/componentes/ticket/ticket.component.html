@@ -55,8 +55,7 @@
                 <form #f="ngForm" (ngSubmit)="submit()" class="login-form row g-3" method="post" action="#" >
 
                     <!-- <div>
-                        <input type="text" class="form-control" id="inputEmail4" name="folio"  placeholder="{{folio}}" value="{{folio}}" [(ngModel)]="ticketModel.folio" required>
-
+                        <input type="text" class="form-control" id="inputEmail4" name="folio" [value]="today" [(ngModel)]="ticketModel.folio" >
                     </div> -->
 
                     <div class="col-md-6">
@@ -70,14 +69,14 @@
 
                     <div class="col-md-3">
                         <label for="inputPassword4" class="form-label">Fecha de Asignación</label>
-                        <input type="date" class="form-control" id="inputPassword4" name="fechaAsignacion" [(ngModel)]="ticketModel.asignado">
+                        <input type="datetime-local" class="form-control" id="inputPassword4" name="fechaAsignacion" [(ngModel)]="ticketModel.asignado">
+
                     </div>
 
                     <div class="col-md-3">
                         <label for="inputPassword4" class="form-label" hidden>ID</label>
                         <input type="text" class="form-control" id="inputPassword4" name="id" value="{{id}}" placeholder="{{id}}" [(ngModel)]="ticketModel.id" hidden>
 
-                        <input type="text" class="form-control" id="inputPassword4" [(ngModel)]="ticketModel.folio" name="folio" value="{{folio}}" hidden>
 
                     </div>
 
@@ -88,7 +87,7 @@
 
                     <div class="col-md-6">
                         <label for="inputAddress" class="form-label">Estado</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketModel.estatus" value="Ligado" name="estado">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketModel.estatus" name="estado">
 
                         <input type="text" class="form-control" id="inputAddress" placeholder="fecha" disabled [(ngModel)]="ticketModel.creacion" value="{{todayWithPipe}}" name="fechacreacion" hidden>
                     </div>
@@ -123,6 +122,12 @@
 
                         <label for="inputState" class="form-label">Proyecto</label>
                         <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.proyecto" name="proyecto">
+                          <option selected disabled>--select proyecto--</option>
+                          <option *ngFor="let proyecto of projects" [ngValue]="proyecto.nombre">{{proyecto.nombre}}</option>
+                        </select>
+                        &nbsp;
+                        <label for="inputState" class="form-label">Área</label>
+                        <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.area" name="proyecto" *ngIf="ticketModel.proyecto">
                           <option selected disabled>--select proyecto--</option>
                           <option *ngFor="let proyecto of projects" [ngValue]="proyecto.nombre_proyecto">{{proyecto.nombre_proyecto}}</option>
                         </select>

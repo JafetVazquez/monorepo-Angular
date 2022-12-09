@@ -59,12 +59,15 @@
                         <input type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="ticketData.titulo" required disabled>
 
                         <label for="inputEmail4" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="inputEmail4" name="usuario" [(ngModel)]="ticketData.ticket_usariocreador" required disabled>
+                        <input type="text" class="form-control" id="inputEmail4" name="usuario" [(ngModel)]="ticketData.autor" required disabled>
                     </div>
 
                     <div class="col-md-3">
+                        <label for="inputPassword4" class="form-label">Fecha de creación</label>
+                        <input type="datetime-local" class="form-control" id="inputPassword4" name="fechaCreacion" [(ngModel)]="ticketData.creacion">
+
                         <label for="inputPassword4" class="form-label">Fecha de Asignación</label>
-                        <input type="date" class="form-control" id="inputPassword4" name="fechaAsignacion" [(ngModel)]="ticketData.fecha_asignado">
+                        <input type="datetime-local" class="form-control" id="inputPassword4" name="fechaAsignacion" [(ngModel)]="ticketData.asignado">
                     </div>
 
                     <div class="col-md-3">
@@ -79,41 +82,43 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="inputAddress" class="form-label">Estado</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketData.ticket_tipopstatus" value="Ligado" name="estado">
+                        <!-- <label for="inputAddress" class="form-label">Estado</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketData.ticket_tipopstatus" value="Ligado" name="estado"> -->
 
-                        <input type="text" class="form-control" id="inputAddress" placeholder="fecha" disabled [(ngModel)]="ticketData.fecha_creacion" value="{{todayWithPipe}}" name="fechacreacion" hidden>
+                        <label for="inputAddress" class="form-label">Área</label>
+                        <input type="text" class="form-control" id="inputAddress" name="area" [(ngModel)]="ticketData.area" disabled>
                     </div>
 
                     <div class="col-md-6">
 
                         <label for="inputAddress" class="form-label">Estatus</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Creado" disabled [(ngModel)]="ticketData.ticket_tipopstatus" value="Creado" name="status">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Creado" disabled [(ngModel)]="ticketData.estatus" value="Creado" name="status">
+
                     </div>
 
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Prioridad</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.ticket_tipoprioridad" name="prioridad">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.prioridad" name="prioridad">
                           <option selected>Baja</option>
                           <option>Media</option>
                           <option>Alta</option>
                           <option>Urgente</option>
                         </select>
 
-                        <label for="inputState" class="form-label">Especialidad</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.ticket_especialistaasignado" name="especialidad">
+                        <!-- <label for="inputState" class="form-label">Especialidad</label>
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.especialista" name="especialidad">
                           <option selected>Hardware</option>
                           <option>Software</option>
                           <option>Mantenimiento</option>
-                        </select>
+                        </select> -->
 
                         <label for="inputState" class="form-label">Especialista</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.ticket_especialistaasignado" name="especialista">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.especialista" name="especialista">
                           <option selected>Panchito Pérez</option>
                           <option>Juanito López</option>
                         </select>
 
-                        <select id="areaOrigen" class="form-select" [(ngModel)]="ticketData.ticket_areaorigen" hidden>
+                        <select id="areaOrigen" class="form-select" [(ngModel)]="ticketData.area" hidden>
                           <option selected>Recursos Humanos</option>
                           <option>Administración</option>
                         </select>
@@ -121,7 +126,7 @@
 
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Cambiar estatus</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.ticket_tipopstatus" name="cambiarEstatus">
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.estatus" name="cambiarEstatus">
                           <option>Creado</option>
                           <option>Asignado</option>
                           <option>En espera</option>

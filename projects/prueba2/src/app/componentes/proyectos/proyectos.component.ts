@@ -10,7 +10,7 @@ import { Projects } from "../../../assets/projects";
 })
 export class ProyectosComponent implements OnInit {
 
-  codigo = this.activatedRoute.snapshot.params['codigo'];
+  id = this.activatedRoute.snapshot.params['id'];
   folio!: string;
   // projectData: any = {};
   projectData: any[] = [];
@@ -22,13 +22,13 @@ export class ProyectosComponent implements OnInit {
   }
 
   // Ticket By project
-  ticketByProject(codigo: string){
-    this.router.navigate(['proyecto', codigo,'tickets'])
+  ticketByProject(id: string){
+    this.router.navigate(['proyecto', id,'tickets'])
   }
 
   ngOnInit(): void {
-
-  
+    // console.log(this.projectData);
+    
 
   }
 

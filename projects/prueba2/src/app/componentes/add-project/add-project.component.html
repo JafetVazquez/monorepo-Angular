@@ -1,0 +1,71 @@
+<app-sidebar></app-sidebar>
+<app-sidebar2></app-sidebar2>
+<!DOCTYPE html>
+
+<html lang="es">
+  
+<body>
+
+    <h3 class="text-center pt-3">PERFIL</h3>
+  
+    <div class="cont">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3"></div>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            
+
+                
+                <br>
+                <br>                
+                <form #f="ngForm" (ngSubmit)="submit()" class="login-form row g-3" method="post" action="#" >
+
+                    <div class="col-md-12">
+                        <label for="inputEmail4" class="form-label">Nombre</label>
+                        <input type="text" [(ngModel)]="projectModel.nombre" class="form-control"  id="inputEmail4" name="nombre">
+
+                        <label for="inputEmail4" class="form-label">Código</label>
+                        <input type="text" class="form-control"  id="inputEmail4" [(ngModel)]="projectModel.codigo" name="codigo">
+
+                        <label for="inputEmail4" class="form-label">Descripción</label>
+                        <textarea type="text" class="form-control"  id="inputEmail4" [(ngModel)]="projectModel.descripcion" name="descripcion"></textarea>
+
+                        <label for="inputEmail4" class="form-label">Fecha de inicio</label>
+                        <input type="datetime-local" class="form-control" [(ngModel)]="projectModel.fecha_inicio" id="inputEmail4" name="fechaInicio">
+
+                        <label for="inputEmail4" class="form-label">Fecha final</label>
+                        <input type="datetime-local" class="form-control" [(ngModel)]="projectModel.fecha_final" id="inputEmail4" name="fechaFinal">
+
+                        <input type="datetime-local" class="form-control" [(ngModel)]="projectModel.estatus" id="inputEmail4" name="fechaFinal" hidden>
+                    </div>
+                    
+
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <button type="submit" style="background-color: gray;" class="btn btn-dark">Crear</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <button type="button" style="background-color: gray;"  class="btn btn-dark" routerLink="/proyectos">Cancelar</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-3"></div>
+            </div>
+        </div>
+    
+</body>
+</html>

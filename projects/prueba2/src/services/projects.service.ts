@@ -24,34 +24,34 @@ export class ProjectsService {
       'Access-Control-Allow-Credentials': 'true',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'ngrok-skip-browser-warning': 'ngrok-skip-browser-warning',
-      'User-Agent': 'custom/non-standard'
+      // 'User-Agent': 'custom/non-standard'
       
     })
   };
 
   // get all projects
   getProjects(): Observable<Projects> {
-    return this.http.get<Projects>(this.apiURL + '/proyectos', this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Projects>(this.apiURL + '/proyecto/', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // get project by id
   getProjectById(codigo: any): Observable<Projects>{
-    return this.http.get<Projects>(this.apiURL + '/proyectos/' + codigo).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Projects>(this.apiURL + '/proyecto/' + codigo).pipe(retry(1), catchError(this.handleError));
   }
 
   // create project
   createProject(codigo: any): Observable<Projects>{
-    return this.http.post<Projects>(this.apiURL + '/proyectos', JSON.stringify(codigo), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.post<Projects>(this.apiURL + '/proyecto', JSON.stringify(codigo), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   //update project
   updateProject(codigo: any, data: any): Observable<Projects>{
-    return this.http.put<Projects>(this.apiURL + '/proyectos/' + codigo, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.put<Projects>(this.apiURL + '/proyecto/' + codigo, JSON.stringify(data), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // delete project
   deleteProject(codigo: any): Observable<Projects>{
-    return this.http.delete<Projects>(this.apiURL + '/proyectos/' + codigo, this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.delete<Projects>(this.apiURL + '/proyecto/' + codigo, this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   // handleError
