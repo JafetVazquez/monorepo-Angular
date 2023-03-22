@@ -45,12 +45,12 @@
 
               <div class="mb-3 bg-color">
                 <label>Usuario</label>
-                <input type="email" formControlName="correo" name="email" class="form-control" required>
+                <input type="email" formControlName="correo" name="email" class="form-control" required [ngModel]="email">
               </div>
 
               <div class="mb-3 bg-color">
                 <label>Contraseña</label>
-                <input type="password" formControlName="password" name="password" class="form-control" required>
+                <input type="password" formControlName="password" name="password" class="form-control" required [ngModel]="password">
               </div>
 
               <button type="submit" class="btn btn-dark btn-block mt-3 d-grid gap-2 mx-auto" >Iniciar sesión</button>

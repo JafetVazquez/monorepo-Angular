@@ -134,7 +134,8 @@
 
             <ng-container matColumnDef="Fecha">
                 <th mat-cell *matHeaderCellDef mat-sort-header>Fecha</th>
-                <td mat-cell *matCellDef="let element">{{element.asignado}}</td>
+                <td mat-cell *matCellDef="let element">{{element.asignado | date
+                    : 'dd/MM/yyyy'}}</td>
             </ng-container>
 
             <ng-container matColumnDef="Estatus">

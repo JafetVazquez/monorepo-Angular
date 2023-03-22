@@ -41,12 +41,15 @@ export class TicketGestorComponent implements OnInit, OnDestroy {
 
       this.data.paginator = this.paginator;
       this.data.sort = this.sort;
-    })
+    });
+
+    // console.log(this.codigoProject);
   }
 
   doFilter(value: any){
     this.data.filter = value.trim().toLocaleLowerCase();
   }
+  
 
   ngOnDestroy(): void {
 

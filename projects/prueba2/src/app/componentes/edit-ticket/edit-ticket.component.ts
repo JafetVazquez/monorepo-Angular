@@ -6,6 +6,8 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Tickets } from "../../../assets/tickets";
 
 import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: 'app-edit-ticket',
@@ -16,6 +18,7 @@ export class EditTicketComponent implements OnInit {
   id = this.activatedRoute.snapshot.params['id'];
   folio: string = '';
   ticketData: any = {};
+  estatusTicket: any[] = [];
   // forms = FormGroup;
 
   // ticketData: Tickets = {
@@ -69,14 +72,20 @@ export class EditTicketComponent implements OnInit {
   today: Date = new Date();
   pipe = new DatePipe('en-US');
   todayWithPipe: string | null | undefined = '';
-  ticketModel = new Tickets("", "", this.folio, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+  apiURL = environment.apiUrl
+  // ticketModel = new Tickets("", "", this.folio, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+  ticketModel = new Tickets("", "", this.folio, "", "", this.todayWithPipe, "", "", "", "", "", "", "", null, null, null, null, null, null);
 
-  constructor(public ticketsService: TicketsService, public router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(public ticketsService: TicketsService, public router: Router, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
 
     this.ticketsService.getTicketById(this.id).subscribe((data: {}) => {
       this.ticketData = data;
+    });
+
+    this.http.get<any>(this.apiURL + '/estatus/').subscribe((data: any) => {
+      this.estatusTicket = data;      
     })
 
     // this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');

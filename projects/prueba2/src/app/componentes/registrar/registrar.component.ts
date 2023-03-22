@@ -17,8 +17,11 @@ export class RegistrarComponent implements OnInit {
   
   signUp: FormGroup | any;
   signUser: any;
+  creacion: Date = new Date();
   // apiURL = 'http://localhost:3000/users';
   apiURL = environment.apiUrl
+  roles: any[] = [];
+  proyectos: any[] = [];
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -34,22 +37,37 @@ export class RegistrarComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUp = new FormGroup({
-      'id': new FormControl(),
-      'nombre': new FormControl('', Validators.required),
-      'apellidos': new FormControl(),
+      // 'id': new FormControl(),
+      'nombre': new FormControl(),
+      'paterno': new FormControl(),
+      'materno': new FormControl(),
       'correo': new FormControl(),
-      'password': new FormControl(),
-      'codigo': new FormControl(),
-      'fc_crea': new FormControl(),
-      'fc_culm': new FormControl(),
+      'contrasenia': new FormControl(),
+      'creacion': new FormControl(),
+      'actualizacion': new FormControl(),
       'rol': new FormControl(),
-      'proyecto': new FormControl()
+      'proyecto': new FormControl(),
+      'estatus': new FormControl(1)
     });
+
+    this.http.get<any>(this.apiURL + '/rol/').subscribe((data: any) => {
+      this.roles = data;
+      // console.log(data);
+      
+    })
+
+    this.http.get<any>(this.apiURL + '/proyecto/').subscribe((data: any) => {
+      this.proyectos = data;
+      // console.log(data);
+      
+    })
   }
 
   signUpData(signUp: FormGroup){
-    this.signUser = this.signUp.value.codigo;
-    this.http.post<any>(this.apiURL + '/users', this.signUp.value).subscribe(data => {
+    this.signUser = this.signUp.value.correo;
+    console.log(this.signUp.value);
+    
+    this.http.post<any>(this.apiURL + '/usuario/', this.signUp.value).subscribe(data => {
       // alert('datos añadidos');
       this.msgAlert('success', 'Usuario Registrado');
       this.signUp.reset();

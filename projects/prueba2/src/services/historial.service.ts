@@ -10,8 +10,8 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class HistorialService {
-  // apiURL = 'http://localhost:3000';
-  apiURL = environment.apiUrl
+  apiURL = 'http://localhost:3000';
+  //apiURL = environment.apiUrl
   data: any;
   ticket='?id_ticket='
 

@@ -37,11 +37,11 @@ export class Tickets{
         public reasignado: string,
         public resuelto: string,
         public validado: string,
-        public autor: string,
-        public proyecto: string,
-        public area: string,
-        public especialista: string,
-        public prioridad: string,
-        public estatus: string
+        public autor: number | null,
+        public proyecto: number | null,
+        public area: number | null,
+        public especialista: number | null,
+        public prioridad: number | null | undefined,
+        public estatus: number | null
     ){}
 }

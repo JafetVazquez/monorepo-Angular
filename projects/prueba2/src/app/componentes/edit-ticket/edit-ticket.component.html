@@ -98,12 +98,12 @@
 
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Prioridad</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.prioridad" name="prioridad">
-                          <option selected>Baja</option>
-                          <option>Media</option>
-                          <option>Alta</option>
-                          <option>Urgente</option>
-                        </select>
+                        <select id="inputState" class="form-select" [(ngModel)]="ticketModel.prioridad" name="prioridad">
+                            <option value=4 selected>Baja</option>
+                            <option value=3>Media</option>
+                            <option value=2>Alta</option>
+                            <option value=1>Urgente</option>
+                          </select>
 
                         <!-- <label for="inputState" class="form-label">Especialidad</label>
                         <select id="inputState" class="form-select" [(ngModel)]="ticketData.especialista" name="especialidad">
@@ -112,7 +112,7 @@
                           <option>Mantenimiento</option>
                         </select> -->
 
-                        <label for="inputState" class="form-label">Especialista</label>
+                        <!-- <label for="inputState" class="form-label">Especialista</label>
                         <select id="inputState" class="form-select" [(ngModel)]="ticketData.especialista" name="especialista">
                           <option selected>Panchito Pérez</option>
                           <option>Juanito López</option>
@@ -121,18 +121,15 @@
                         <select id="areaOrigen" class="form-select" [(ngModel)]="ticketData.area" hidden>
                           <option selected>Recursos Humanos</option>
                           <option>Administración</option>
-                        </select>
+                        </select> -->
                     </div>
 
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Cambiar estatus</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketData.estatus" name="cambiarEstatus">
-                          <option>Creado</option>
-                          <option>Asignado</option>
-                          <option>En espera</option>
-                          <option>En proceso</option>
-                          <option>Resuelto</option>
-                        </select>
+                        <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.estatus" name="cambiarEstatus">
+                            <option selected disabled>--select estatus--</option>
+                            <option *ngFor="let estatus of estatusTicket" [ngValue]="estatus.id">{{estatus.tipo}}</option>
+                          </select>
                     </div>
 
                     <!-- <div class="col-md-2">

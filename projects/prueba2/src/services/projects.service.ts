@@ -36,12 +36,12 @@ export class ProjectsService {
 
   // get project by id
   getProjectById(codigo: any): Observable<Projects>{
-    return this.http.get<Projects>(this.apiURL + '/proyecto/' + codigo).pipe(retry(1), catchError(this.handleError));
+    return this.http.get<Projects>(this.apiURL + '/proyecto' + codigo).pipe(retry(1), catchError(this.handleError));
   }
 
   // create project
   createProject(codigo: any): Observable<Projects>{
-    return this.http.post<Projects>(this.apiURL + '/proyecto', JSON.stringify(codigo), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http.post<Projects>(this.apiURL + '/proyecto/', JSON.stringify(codigo), this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 
   //update project

@@ -12,9 +12,10 @@ import { environment } from "../environments/environment";
 })
 export class CommentsService {
 
-  apiURL = environment.apiUrl
-  // apiURL = 'http://localhost:3000';
+  // apiURL = environment.apiUrl
+  apiURL = 'http://localhost:3000';
 
+  // consulta="?id_ticket="
   consulta="?id_ticket="
 
   idComment= this.activatedRoute.snapshot.params['id']

@@ -52,7 +52,7 @@ export class TicketsService {
 
   // create Ticket
   createTicket(id: any): Observable<Tickets>{
-    return this.http.post<Tickets>(this.apiURL + '/ticket/', JSON.stringify(id), this.httpOptions).pipe(retry(1),catchError(this.handleError));
+    return this.http.post<Tickets>('http://localhost:3000' + '/ticket/', JSON.stringify(id), this.httpOptions).pipe(retry(1),catchError(this.handleError));
   }
 
   // update Ticket

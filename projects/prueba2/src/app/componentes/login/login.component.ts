@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UsersService } from "../../users/users.service";
 import { FormControl, FormGroup } from "@angular/forms";
 import { Observable } from "rxjs";
+import { environment } from "../../../environments/environment";
 
 import Swal from 'sweetalert2';
 
@@ -17,10 +18,11 @@ declare var $: any;
 export class LoginComponent implements OnInit {
 
   login: FormGroup | any;
-  apiURL = 'http://localhost:3000/users';
+  // apiURL = 'http://localhost:3000/users';
+  apiURL = environment.apiUrl;
 
-  // email: any;
-  // password: any;
+  email = 'jetvax.jv@gmail.com';
+  password = '123';
   // UserService: any;
   
   constructor(private http: HttpClient , private router: Router) { }
@@ -29,13 +31,15 @@ export class LoginComponent implements OnInit {
     this.login = new FormGroup({
       'correo': new FormControl(),
       'password': new FormControl()
-    })
+    });
+
+    this.alertaInicio();
   }
 
   loginData(login: FormGroup){
-    this.http.get<any>(this.apiURL).subscribe(data => {
+    this.http.get<any>(this.apiURL + '/usuario/').subscribe(data => {
       const user = data.find((a: any) => {
-        return a.correo === this.login.value.correo && a.password === this.login.value.password
+        return a.correo === this.login.value.correo && a.password === this.login.value.contrasenia
       });
 
       if(user){
@@ -79,6 +83,14 @@ export class LoginComponent implements OnInit {
       icon: icon,
       title: title
     })
+  }
+
+  alertaInicio = () => {
+    Swal.fire(
+      'INFO',
+      'Este sitio solo es una prueba, tal vez tenga errores al navegar...',
+      'info'
+    )
   }
   // login(){
   //   const user = {

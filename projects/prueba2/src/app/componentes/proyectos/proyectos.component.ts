@@ -27,7 +27,7 @@ export class ProyectosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.projectData);
+    // console.log(this.folio);
     
 
   }

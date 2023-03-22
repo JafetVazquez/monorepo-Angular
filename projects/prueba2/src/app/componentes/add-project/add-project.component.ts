@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Projects } from "../../../assets/projects";
 import { ProjectsService } from "../../../services/projects.service";
 import { Router } from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-project',
@@ -19,7 +20,28 @@ export class AddProjectComponent implements OnInit {
 
   submit(){
     this.projectService.createProject(this.projectModel).subscribe((data: {}) => {
+      this.msgAlert('success', 'Proyecto Registrado');
       this.router.navigate(['/proyectos'])
+    })
+  }
+
+  msgAlert = (icon: any, title: any) => {
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
+      icon: icon,
+      title: title
     })
   }
 

@@ -63,8 +63,14 @@
 
                         <input type="text" class="form-control" id="inputEmail4" name="titulo" [(ngModel)]="ticketModel.titulo" required>
 
-                        <label for="inputEmail4" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="inputEmail4" name="usuario" [(ngModel)]="ticketModel.autor" required>
+                        <!-- <label for="inputEmail4" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="inputEmail4" name="usuario" [(ngModel)]="ticketModel.autor" required> -->
+
+                        <label for="inputState" class="form-label">Usuario</label>
+                        <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.autor" name="autor">
+                          <option selected disabled>--select user--</option>
+                          <option *ngFor="let user of users" [ngValue]="user.id">{{user.nombre}} {{user.paterno}} {{user.materno}}</option>
+                        </select>
                     </div>
 
                     <div class="col-md-3">
@@ -86,8 +92,8 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="inputAddress" class="form-label">Estado</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketModel.estatus" name="estado">
+                        <!-- <label for="inputAddress" class="form-label">Estado</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Ligado" disabled [(ngModel)]="ticketModel.estatus" name="estado"> -->
 
                         <input type="text" class="form-control" id="inputAddress" placeholder="fecha" disabled [(ngModel)]="ticketModel.creacion" value="{{todayWithPipe}}" name="fechacreacion" hidden>
                     </div>
@@ -101,56 +107,52 @@
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Prioridad</label>
                         <select id="inputState" class="form-select" [(ngModel)]="ticketModel.prioridad" name="prioridad">
-                          <option selected>Baja</option>
-                          <option>Media</option>
-                          <option>Alta</option>
-                          <option>Urgente</option>
+                          <option value=4 selected>Baja</option>
+                          <option value=3>Media</option>
+                          <option value=2>Alta</option>
+                          <option value=1>Urgente</option>
                         </select>
 
-                        <!-- <label for="inputState" class="form-label">Especialidad</label>
-                        <select id="inputState" class="form-select" [(ngModel)]="ticketModel.especialista" name="especialidad">
-                          <option selected>Hardware</option>
-                          <option>Software</option>
-                          <option>Mantenimiento</option>
-                        </select> -->
 
-                        <label for="inputState" class="form-label">Especialista</label>
+                        <!-- <label for="inputState" class="form-label">Especialista</label>
                         <select id="inputState" class="form-select" [(ngModel)]="ticketModel.especialista" name="especialista">
-                          <option selected>Panchito Pérez</option>
-                          <option>Juanito López</option>
-                        </select>
+                          <option value=1 selected>Panchito Pérez</option>
+                          <option value=2>Juanito López</option>
+                        </select> -->
 
                         <label for="inputState" class="form-label">Proyecto</label>
                         <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.proyecto" name="proyecto">
                           <option selected disabled>--select proyecto--</option>
-                          <option *ngFor="let proyecto of projects" [ngValue]="proyecto.nombre">{{proyecto.nombre}}</option>
+                          <option *ngFor="let proyecto of projects" [ngValue]="proyecto.id">{{proyecto.nombre}}</option>
                         </select>
                         &nbsp;
-                        <label for="inputState" class="form-label">Área</label>
-                        <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.area" name="proyecto" *ngIf="ticketModel.proyecto">
+                        <!-- <label for="inputState" class="form-label">Área</label> -->
+                        <!-- <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.area" name="proyecto" *ngIf="ticketModel.proyecto">
                           <option selected disabled>--select proyecto--</option>
-                          <option *ngFor="let proyecto of projects" [ngValue]="proyecto.nombre_proyecto">{{proyecto.nombre_proyecto}}</option>
-                        </select>
+                          <option *ngFor="let proyecto of projects" [ngValue]="proyecto.id">{{proyecto.nombre_proyecto}}</option>
+                        </select> -->
                     </div>
 
                     <div class="col-md-6">
-                        <label for="inputState" class="form-label">Cambiar estatus</label>
+                        <!-- <label for="inputState" class="form-label">Cambiar estatus</label>
                         <select id="inputState" class="form-select" [(ngModel)]="ticketModel.estatus" name="cambiarEstatus">
-                          <option selected>Creado</option>
-                          <option>Atendido</option>
-                          <option>Asignado</option>
-                          <option>En espera</option>
-                          <option>En proceso</option>
-                          <option>Resuelto</option>
-                          <option>Validado</option>
-                          <option>Cancelado</option>
+                          <option value=1 selected>Creado</option>
+                          <option value=2>Atendido</option>
+                          <option value=3>Asignado</option>
+                          <option value=4>En espera</option>
+                          <option value=5>En proceso</option>
+                          <option value=6>Resuelto</option>
+                          <option value=7>Validado</option>
+                          <option value=8>Cancelado</option>
+                        </select> -->
+
+                        <label for="inputState" class="form-label">Estatus</label>
+                        <select id="proyecto" class="form-select" [(ngModel)]="ticketModel.estatus" name="cambiarEstatus">
+                          <option selected disabled>--select estatus--</option>
+                          <option *ngFor="let estatus of estatusTicket" [ngValue]="estatus.id">{{estatus.tipo}}</option>
                         </select>
                     </div>
 
-                    <!-- <div class="col-md-2">
-                        <label for="inputZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div> -->
 
                     <div class="col-12">
                         <button class="btn btn-link" routerLink="comments">Comentarios</button>
