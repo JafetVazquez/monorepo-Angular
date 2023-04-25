@@ -129,7 +129,7 @@
             "assets": [
               "projects/prueba2/src/favicon.ico",
               "projects/prueba2/src/assets",
-              "src/_redirects"
+              "projects/prueba2/src/_redirects"
             ],
             "styles": [
               "projects/prueba2/src/styles.css",
