@@ -128,7 +128,8 @@
             "tsConfig": "projects/prueba2/tsconfig.app.json",
             "assets": [
               "projects/prueba2/src/favicon.ico",
-              "projects/prueba2/src/assets"
+              "projects/prueba2/src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "projects/prueba2/src/styles.css",
